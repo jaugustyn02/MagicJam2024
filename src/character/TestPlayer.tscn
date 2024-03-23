@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bgrlwqk04wnx4"]
 
-[ext_resource type="Script" path="res://characters/TestPlayer.gd" id="1_g7qy8"]
+[ext_resource type="Script" path="res://src/character/TestPlayer.gd" id="1_g7qy8"]
 [ext_resource type="Texture2D" uid="uid://d11dw360xihqm" path="res://resources/Wooden_Hoe.png" id="1_vvnft"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0byh2"]

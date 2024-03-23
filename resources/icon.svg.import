@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5ibar51onpc6"
-path="res://.godot/imported/Wooden_Hoe.png-fed2ffcf4f8601b62e1db5df2f421e1b.ctex"
+uid="uid://cydfu7tvwi2v8"
+path="res://.godot/imported/icon.svg-60a93a01b332c0a9192782f1380f6837.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Wooden_Hoe.png"
-dest_files=["res://.godot/imported/Wooden_Hoe.png-fed2ffcf4f8601b62e1db5df2f421e1b.ctex"]
+source_file="res://resources/icon.svg"
+dest_files=["res://.godot/imported/icon.svg-60a93a01b332c0a9192782f1380f6837.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

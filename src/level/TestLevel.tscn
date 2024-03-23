@@ -1,15 +1,15 @@
 [gd_scene load_steps=5 format=3 uid="uid://6njsu6t6ajot"]
 
-[ext_resource type="Script" path="res://scenes/SceneManager.gd" id="1_3dq06"]
-[ext_resource type="Texture2D" uid="uid://cydfu7tvwi2v8" path="res://icon.svg" id="1_yi2vd"]
-[ext_resource type="PackedScene" uid="uid://bgrlwqk04wnx4" path="res://characters/TestPlayer.tscn" id="2_clq21"]
+[ext_resource type="Script" path="res://src/game_management/SceneManager.gd" id="1_if5dc"]
+[ext_resource type="PackedScene" uid="uid://bgrlwqk04wnx4" path="res://src/character/TestPlayer.tscn" id="2_taq2s"]
+[ext_resource type="Texture2D" uid="uid://cydfu7tvwi2v8" path="res://resources/icon.svg" id="3_hf6kg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lgdcc"]
 size = Vector2(1151, 40)
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_3dq06")
-PlayerScene = ExtResource("2_clq21")
+script = ExtResource("1_if5dc")
+PlayerScene = ExtResource("2_taq2s")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -20,7 +20,7 @@ shape = SubResource("RectangleShape2D_lgdcc")
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(576, 624.5)
 scale = Vector2(8.98437, 0.335937)
-texture = ExtResource("1_yi2vd")
+texture = ExtResource("3_hf6kg")
 
 [node name="SprawnLocations" type="Node2D" parent="."]
 

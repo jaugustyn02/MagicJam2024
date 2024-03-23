@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://crah5mw3epb4k"]
 
-[ext_resource type="Script" path="res://scenes/MultiplayerController.gd" id="1_xtlph"]
+[ext_resource type="Script" path="res://src/game_management/MultiplayerController.gd" id="1_gqf14"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -9,7 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_xtlph")
+script = ExtResource("1_gqf14")
 
 [node name="Host" type="Button" parent="."]
 layout_mode = 0
