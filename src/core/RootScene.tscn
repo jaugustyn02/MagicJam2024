@@ -1,22 +1,27 @@
-[gd_scene load_steps=10 format=3 uid="uid://cqjsmgq438py"]
+[gd_scene load_steps=12 format=3 uid="uid://cqjsmgq438py"]
 
 [ext_resource type="Script" path="res://src/core/RootScene.gd" id="1_n7fwb"]
 [ext_resource type="PackedScene" uid="uid://duppseykdo0cy" path="res://src/game_management/TimeController.tscn" id="1_n223u"]
+[ext_resource type="PackedScene" uid="uid://cslpginlt0h0s" path="res://src/ui/end_screen.tscn" id="2_cqdib"]
 [ext_resource type="PackedScene" uid="uid://sv6gi2mgs0b7" path="res://src/game_management/LevelManager.tscn" id="4_4wkn0"]
 [ext_resource type="Script" path="res://src/core/PlayerHUD.gd" id="4_i2xps"]
 [ext_resource type="Script" path="res://src/core/TimeCounter.gd" id="4_s8cbv"]
 [ext_resource type="Script" path="res://src/core/TimeBar.gd" id="5_l6w0t"]
+[ext_resource type="PackedScene" uid="uid://bkivt3oilbpka" path="res://src/sound/background_music.tscn" id="7_27b7c"]
 
 [sub_resource type="SystemFont" id="SystemFont_nnir8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q73ba"]
-bg_color = Color(0.545098, 0, 0.0235294, 1)
+bg_color = Color(0.882353, 0.611765, 0.0588235, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pccrh"]
 bg_color = Color(0, 0.666667, 0.803922, 1)
 
 [node name="RootScene" type="Node2D"]
 script = ExtResource("1_n7fwb")
+
+[node name="EndScreen" parent="." instance=ExtResource("2_cqdib")]
+visible = false
 
 [node name="MusicController" type="Control" parent="."]
 layout_mode = 3
@@ -91,3 +96,5 @@ value = 180.0
 fill_mode = 1
 show_percentage = false
 script = ExtResource("5_l6w0t")
+
+[node name="Background_music" parent="." instance=ExtResource("7_27b7c")]

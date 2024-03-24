@@ -21,6 +21,8 @@ func _ready():
 		
 		currentPlayer.name = str(GameManager.Players[i].id)
 		
+		currentPlayer.end_game.connect(get_parent().end_game)
+		
 		for spawn in $Level.get_tree().get_nodes_in_group("PlayerSpawnPoint"):
 			if spawn.name == str(index):
 				currentPlayer.global_position = spawn.global_position

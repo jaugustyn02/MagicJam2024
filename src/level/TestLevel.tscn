@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://6njsu6t6ajot"]
+[gd_scene load_steps=26 format=3 uid="uid://6njsu6t6ajot"]
 
 [ext_resource type="Script" path="res://src/level/TestLevel.gd" id="1_7dhi7"]
 [ext_resource type="Texture2D" uid="uid://owy2ofsi86mi" path="res://resources/background_mountains2/floor_long.PNG" id="3_0vf8o"]
@@ -9,19 +9,49 @@
 [ext_resource type="Texture2D" uid="uid://cpu6abq138lmt" path="res://resources/background_mountains2/mountains2.PNG" id="7_yf2fd"]
 [ext_resource type="Script" path="res://src/level/Collectables.gd" id="8_0jkxd"]
 [ext_resource type="Texture2D" uid="uid://eo7qm6iukqdd" path="res://resources/background_mountains2/Nearest mountains.PNG" id="8_cqw81"]
+[ext_resource type="Texture2D" uid="uid://b3wkrha0fjukk" path="res://resources/background_mountains2/platform2.PNG" id="8_yt1fh"]
 [ext_resource type="Texture2D" uid="uid://c4qe0b5c20kbn" path="res://resources/background_mountains2/Foreground.PNG" id="9_d2gpw"]
 [ext_resource type="Texture2D" uid="uid://bxox6f7xdm6o4" path="res://resources/background_mountains2/stone.PNG" id="10_orx60"]
+[ext_resource type="Texture2D" uid="uid://j1oooduupcdf" path="res://resources/background_mountains2/spear.PNG" id="11_ebjro"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5ois"]
-size = Vector2(133.216, 76.4179)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4x58y"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_al2mc"]
 size = Vector2(62.0001, 1083.99)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j8tdh"]
-size = Vector2(62.0001, 1197)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_posqs"]
+size = Vector2(42.2497, 1162)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k8v3g"]
+size = Vector2(83.0107, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_seu7v"]
+size = Vector2(229, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpkte"]
+size = Vector2(382.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hs8y0"]
+size = Vector2(193.5, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_un8m0"]
+size = Vector2(115.5, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ln6w"]
+size = Vector2(118, 20.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfnic"]
+size = Vector2(117, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wfsye"]
+size = Vector2(170, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7mkx"]
+size = Vector2(115, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2mqwp"]
+size = Vector2(348, 18)
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(1, 0)
 script = ExtResource("1_7dhi7")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -33,186 +63,227 @@ position = Vector2(577, 624.5)
 scale = Vector2(1.00348, 1)
 texture = ExtResource("3_0vf8o")
 
-[node name="Platform" type="Sprite2D" parent="StaticBody2D"]
-texture_filter = 1
-position = Vector2(373, 485)
-scale = Vector2(4, 4)
-texture = ExtResource("4_bvoux")
-
-[node name="Platform7" type="Sprite2D" parent="StaticBody2D"]
-z_index = 1
-z_as_relative = false
-texture_filter = 1
-position = Vector2(373, 485)
-scale = Vector2(3.88235, 3.33333)
-texture = ExtResource("4_ymgvv")
-offset = Vector2(0, -3)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(373, 485)
-scale = Vector2(2.49219, 0.523438)
-shape = SubResource("RectangleShape2D_r5ois")
-
-[node name="Platform2" type="Sprite2D" parent="StaticBody2D"]
-texture_filter = 1
-position = Vector2(869, 486)
-scale = Vector2(4, 4)
-texture = ExtResource("4_bvoux")
-
-[node name="Platform8" type="Sprite2D" parent="StaticBody2D"]
-z_index = 1
-texture_filter = 1
-position = Vector2(869, 486)
-scale = Vector2(3.90588, 3.33333)
-texture = ExtResource("4_ymgvv")
-offset = Vector2(0, -3)
-
-[node name="Platform9" type="Sprite2D" parent="StaticBody2D"]
-z_index = 1
-texture_filter = 1
-position = Vector2(950, 341)
-scale = Vector2(3.90588, 3.33333)
-texture = ExtResource("4_ymgvv")
-offset = Vector2(0, -3)
-
-[node name="Platform10" type="Sprite2D" parent="StaticBody2D"]
-z_index = 1
-texture_filter = 1
-position = Vector2(1000, 179)
-scale = Vector2(3.90588, 3.33333)
-texture = ExtResource("4_ymgvv")
-offset = Vector2(0, -3)
-
-[node name="Platform11" type="Sprite2D" parent="StaticBody2D"]
-z_index = 1
-texture_filter = 1
-position = Vector2(250, 341)
-scale = Vector2(3.90588, 3.33333)
-texture = ExtResource("4_ymgvv")
-offset = Vector2(0, -3)
-
-[node name="Platform12" type="Sprite2D" parent="StaticBody2D"]
-z_index = 1
-texture_filter = 1
-position = Vector2(200, 178)
-scale = Vector2(3.90588, 3.33333)
-texture = ExtResource("4_ymgvv")
-offset = Vector2(0, -3)
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(869, 485.5)
-scale = Vector2(2.49219, 0.523438)
-shape = SubResource("RectangleShape2D_r5ois")
-
-[node name="Platform3" type="Sprite2D" parent="StaticBody2D"]
-texture_filter = 1
-position = Vector2(250, 342)
-scale = Vector2(4, 4)
-texture = ExtResource("4_bvoux")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(250, 342)
-scale = Vector2(2.49219, 0.523438)
-shape = SubResource("RectangleShape2D_r5ois")
-
-[node name="Platform4" type="Sprite2D" parent="StaticBody2D"]
-texture_filter = 1
-position = Vector2(950, 343)
-scale = Vector2(4, 4)
-texture = ExtResource("4_bvoux")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(950, 342.5)
-scale = Vector2(2.49219, 0.523438)
-shape = SubResource("RectangleShape2D_r5ois")
-
-[node name="Platform5" type="Sprite2D" parent="StaticBody2D"]
-texture_filter = 1
-position = Vector2(200, 180)
-scale = Vector2(4, 4)
-texture = ExtResource("4_bvoux")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(200, 180)
-scale = Vector2(2.49219, 0.523438)
-shape = SubResource("RectangleShape2D_r5ois")
-
-[node name="Platform6" type="Sprite2D" parent="StaticBody2D"]
-texture_filter = 1
-position = Vector2(1000, 180)
-scale = Vector2(4, 4)
-texture = ExtResource("4_bvoux")
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1000, 180)
-scale = Vector2(2.49219, 0.523438)
-shape = SubResource("RectangleShape2D_r5ois")
-
 [node name="BlockingWall" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1187, 100.996)
-shape = SubResource("RectangleShape2D_4x58y")
+position = Vector2(1187, 80.996)
+shape = SubResource("RectangleShape2D_al2mc")
 
 [node name="BlockingWall2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-31, 95)
-shape = SubResource("RectangleShape2D_4x58y")
+position = Vector2(-31, 75)
+shape = SubResource("RectangleShape2D_al2mc")
 
 [node name="CollisionFloor" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(586, 633)
+position = Vector2(585, 623.125)
 rotation = 1.5708
-shape = SubResource("RectangleShape2D_j8tdh")
+shape = SubResource("RectangleShape2D_posqs")
 
 [node name="Background" type="Sprite2D" parent="StaticBody2D"]
 z_index = -5
 texture_filter = 1
-position = Vector2(577.5, 325)
+position = Vector2(577.5, 305)
 scale = Vector2(2.50652, 2.592)
 texture = ExtResource("5_74qfs")
 
 [node name="Background2" type="Sprite2D" parent="StaticBody2D"]
 z_index = -4
 texture_filter = 1
-position = Vector2(577, 324)
+position = Vector2(577, 304)
 scale = Vector2(2.5087, 2.6)
 texture = ExtResource("6_cpyme")
 
 [node name="Background3" type="Sprite2D" parent="StaticBody2D"]
 z_index = -3
 texture_filter = 1
-position = Vector2(576.5, 326)
+position = Vector2(576.5, 306)
 scale = Vector2(2.51087, 2.584)
 texture = ExtResource("7_yf2fd")
 
 [node name="Background4" type="Sprite2D" parent="StaticBody2D"]
 z_index = -2
 texture_filter = 1
-position = Vector2(576, 326)
+position = Vector2(572, 313)
 scale = Vector2(2.51304, 2.584)
 texture = ExtResource("8_cqw81")
 
-[node name="Background5" type="Sprite2D" parent="StaticBody2D"]
+[node name="Foreground" type="Sprite2D" parent="StaticBody2D"]
 z_index = 3
 texture_filter = 1
-position = Vector2(576, 353)
+position = Vector2(576, 365)
 scale = Vector2(2.513, 3)
 texture = ExtResource("9_d2gpw")
 
-[node name="Rock" type="Sprite2D" parent="StaticBody2D"]
+[node name="platforms right" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(889, 454)
+scale = Vector2(2.305, 2.305)
+texture = ExtResource("8_yt1fh")
+
+[node name="platforms right" type="Sprite2D" parent="StaticBody2D/platforms right"]
+position = Vector2(98.4816, -23.4273)
+scale = Vector2(1.02235, 1.02235)
+texture = ExtResource("8_yt1fh")
+
+[node name="grass" type="Sprite2D" parent="StaticBody2D/platforms right/platforms right"]
+position = Vector2(-0.424302, -2.97046)
+scale = Vector2(0.619159, 0.619159)
+texture = ExtResource("4_ymgvv")
+
+[node name="stone" type="Sprite2D" parent="StaticBody2D/platforms right/platforms right"]
 z_index = -1
-position = Vector2(265, 589)
-scale = Vector2(1.02, 1.19565)
+position = Vector2(17.3986, -8.06271)
+scale = Vector2(0.55535, 0.55535)
 texture = ExtResource("10_orx60")
 
-[node name="Rock2" type="Sprite2D" parent="StaticBody2D"]
+[node name="spear near stone" type="Sprite2D" parent="StaticBody2D/platforms right/platforms right/stone"]
+position = Vector2(-21.3955, 3.82061)
+scale = Vector2(0.619203, 0.619203)
+texture = ExtResource("11_ebjro")
+
+[node name="platforms right2" type="Sprite2D" parent="StaticBody2D/platforms right"]
+position = Vector2(6.10352e-05, -61.6052)
+scale = Vector2(0.999905, 1.12138)
+texture = ExtResource("8_yt1fh")
+
+[node name="stone2" type="Sprite2D" parent="StaticBody2D/platforms right/platforms right2"]
 z_index = -1
-position = Vector2(812, 456)
-scale = Vector2(1.02, 1.19565)
+position = Vector2(-4.77269, -6.19003)
+rotation = -0.120428
+scale = Vector2(0.55535, 0.55535)
+skew = 0.150098
 texture = ExtResource("10_orx60")
 
-[node name="Rock3" type="Sprite2D" parent="StaticBody2D"]
+[node name="grass" type="Sprite2D" parent="StaticBody2D/platforms right/platforms right2"]
+position = Vector2(0, -3.01048)
+scale = Vector2(0.602328, 0.69519)
+texture = ExtResource("4_ymgvv")
+
+[node name="platform lowest" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(483, 502)
+scale = Vector2(2.1, 2.1)
+texture = ExtResource("4_bvoux")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/platform lowest"]
+position = Vector2(82.8571, -3.57628e-07)
+scale = Vector2(1.00119, 1.00119)
+texture = ExtResource("4_bvoux")
+
+[node name="grass2" type="Sprite2D" parent="StaticBody2D/platform lowest/Sprite2D"]
+position = Vector2(0.951216, -2.85375)
+scale = Vector2(0.972711, 0.821066)
+texture = ExtResource("4_ymgvv")
+
+[node name="grass" type="Sprite2D" parent="StaticBody2D/platform lowest/Sprite2D"]
+position = Vector2(-82.7585, -2.37812)
+scale = Vector2(0.998865, 0.917707)
+texture = ExtResource("4_ymgvv")
+
+[node name="platform lowest" type="Sprite2D" parent="StaticBody2D/platform lowest"]
+position = Vector2(-4.59166, -140.952)
+scale = Vector2(1.09762, 1.09762)
+texture = ExtResource("4_bvoux")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/platform lowest/platform lowest"]
+position = Vector2(82.8571, -3.57628e-07)
+scale = Vector2(1.00119, 1.00119)
+texture = ExtResource("4_bvoux")
+
+[node name="grass2" type="Sprite2D" parent="StaticBody2D/platform lowest/platform lowest/Sprite2D"]
+position = Vector2(0.951216, -2.85375)
+scale = Vector2(0.972711, 0.821066)
+texture = ExtResource("4_ymgvv")
+
+[node name="grass" type="Sprite2D" parent="StaticBody2D/platform lowest/platform lowest/Sprite2D"]
+position = Vector2(-82.7585, -2.37812)
+scale = Vector2(0.998865, 0.917707)
+texture = ExtResource("4_ymgvv")
+
+[node name="stone" type="Sprite2D" parent="StaticBody2D/platform lowest/platform lowest"]
 z_index = -1
-position = Vector2(113, 319)
-scale = Vector2(1.02, 1.19565)
+position = Vector2(85.3113, -7.37529)
+scale = Vector2(0.832527, 0.832527)
 texture = ExtResource("10_orx60")
+flip_h = true
+
+[node name="stone" type="Sprite2D" parent="StaticBody2D/platform lowest/platform lowest/stone"]
+z_index = -1
+position = Vector2(-9.38001, 0.521108)
+scale = Vector2(0.832527, 0.832527)
+texture = ExtResource("10_orx60")
+
+[node name="platforms left" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(233.225, 436.25)
+scale = Vector2(2.05, 2.05)
+texture = ExtResource("4_bvoux")
+
+[node name="stone" type="Sprite2D" parent="StaticBody2D/platforms left"]
+z_index = -1
+position = Vector2(-105.595, -43.2701)
+scale = Vector2(0.701853, 0.701853)
+texture = ExtResource("10_orx60")
+
+[node name="platforms left" type="Sprite2D" parent="StaticBody2D/platforms left"]
+position = Vector2(-124.775, -32.6316)
+scale = Vector2(1.1079, 1.1079)
+texture = ExtResource("4_bvoux")
+
+[node name="grass" type="Sprite2D" parent="StaticBody2D/platforms left/platforms left"]
+position = Vector2(-0.47506, -2.3753)
+scale = Vector2(0.998865, 0.917707)
+texture = ExtResource("4_ymgvv")
+
+[node name="platforms left" type="Sprite2D" parent="StaticBody2D/platforms left/platforms left"]
+position = Vector2(131.017, -27.8952)
+scale = Vector2(1.02901, 1.02901)
+texture = ExtResource("4_bvoux")
+
+[node name="platforms upper" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(114.656, 98.8125)
+scale = Vector2(2.7625, 2.7625)
+texture = ExtResource("4_bvoux")
+
+[node name="platforms upper" type="Sprite2D" parent="StaticBody2D/platforms upper"]
+position = Vector2(279.582, 0.0678758)
+scale = Vector2(1.0117, 1.0117)
+texture = ExtResource("4_bvoux")
+
+[node name="g" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(887, 99)
+scale = Vector2(2.79482, 2.79482)
+shape = SubResource("RectangleShape2D_k8v3g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(114.5, 98)
+shape = SubResource("RectangleShape2D_seu7v")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(569, 207)
+shape = SubResource("RectangleShape2D_dpkte")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(275, 306)
+shape = SubResource("RectangleShape2D_hs8y0")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(889.25, 312.5)
+shape = SubResource("RectangleShape2D_un8m0")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1116, 401)
+shape = SubResource("RectangleShape2D_2ln6w")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(13, 371)
+shape = SubResource("RectangleShape2D_rfnic")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(233, 436)
+shape = SubResource("RectangleShape2D_wfsye")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(889, 454)
+shape = SubResource("RectangleShape2D_b7mkx")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(570, 503)
+shape = SubResource("RectangleShape2D_2mqwp")
 
 [node name="SprawnLocations" type="Node2D" parent="."]
 
