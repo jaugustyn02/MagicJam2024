@@ -20,8 +20,11 @@ var attack: float = 0
 
 @onready var anim = get_node("AnimationPlayer")
 
+@export var gravity_counter1: float = -1
+@export var gravity_counter2: float = -1
+ 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @rpc("any_peer", "call_local")
 func add_projectile(throw_power: float):
@@ -36,10 +39,10 @@ func add_projectile(throw_power: float):
 func _ready():
 	$MultiplayerSynchronizer.set_multiplayer_authority(str(name).to_int())
 	PlayerID = multiplayer.get_unique_id()
-	
 	$PlayerHitbox.monitoring = true
 	$AttackHitboxLeft.monitoring = true
 	$AttackHitboxRight.monitoring = true
+	
 func play_anim(animation):
 	anim.play(animation)
 
@@ -50,9 +53,17 @@ func _physics_process(delta):
 		
 	lifetime -= delta * time_multiplier
 	var direction = Input.get_axis("Left", "Right")
-		
+	
 	if not is_on_floor():
-		velocity.y += gravity * delta * (time_multiplier ** 2)
+		var mul: float = 1
+		if gravity_counter1 > 0:
+			mul = 0.5
+		elif gravity_counter2 > 0:
+			mul = 2
+		velocity.y += mul * gravity * delta * (time_multiplier ** 2)
+	
+	gravity_counter1 -= delta
+	gravity_counter2 -= delta
 		
 	$CursorPointer.look_at(get_viewport().get_mouse_position())	
 
