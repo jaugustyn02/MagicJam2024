@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bgrlwqk04wnx4"]
+[gd_scene load_steps=39 format=3 uid="uid://bgrlwqk04wnx4"]
 
 [ext_resource type="Script" path="res://src/character/TestPlayer.gd" id="1_g7qy8"]
 [ext_resource type="Texture2D" uid="uid://dgcm2h5od45yj" path="res://resources/Individual Sprites/adventurer-idle-00.png" id="2_axhvv"]
@@ -32,6 +32,15 @@ properties/0/replication_mode = 1
 properties/1/path = NodePath(".:lifetime")
 properties/1/spawn = true
 properties/1/replication_mode = 1
+properties/2/path = NodePath("AnimationPlayer:current_animation")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("AnimatedSprite2D:flip_h")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath("AnimationPlayer:speed_scale")
+properties/4/spawn = true
+properties/4/replication_mode = 1
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jrgsd"]
 animations = [{
@@ -121,6 +130,7 @@ animations = [{
 [sub_resource type="Animation" id="Animation_7bq6i"]
 resource_name = "Attack"
 length = 0.45
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -145,6 +155,10 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4]
 }
+
+[sub_resource type="Animation" id="Animation_2ielm"]
+resource_name = "Attack2"
+length = 0.57
 
 [sub_resource type="Animation" id="Animation_17srq"]
 resource_name = "Fall"
@@ -244,6 +258,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [1]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Attack2"]
+}
 
 [sub_resource type="Animation" id="Animation_irror"]
 resource_name = "Run"
@@ -276,6 +302,7 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c7isx"]
 _data = {
 "Attack": SubResource("Animation_7bq6i"),
+"Attack2": SubResource("Animation_2ielm"),
 "Fall": SubResource("Animation_17srq"),
 "Idle": SubResource("Animation_ywdnh"),
 "Jump": SubResource("Animation_uojgv"),
@@ -323,7 +350,7 @@ texture_filter = 1
 position = Vector2(4, -7)
 scale = Vector2(2.5025, 2.13123)
 sprite_frames = SubResource("SpriteFrames_jrgsd")
-animation = &"Attack"
+animation = &"Attack2"
 frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
