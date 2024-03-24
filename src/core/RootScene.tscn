@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqjsmgq438py"]
+[gd_scene load_steps=8 format=3 uid="uid://cqjsmgq438py"]
 
 [ext_resource type="Script" path="res://src/core/RootScene.gd" id="1_n7fwb"]
 [ext_resource type="PackedScene" uid="uid://duppseykdo0cy" path="res://src/game_management/TimeController.tscn" id="1_n223u"]
 [ext_resource type="PackedScene" uid="uid://sv6gi2mgs0b7" path="res://src/game_management/LevelManager.tscn" id="4_4wkn0"]
+[ext_resource type="Script" path="res://src/core/TimeCounter.gd" id="4_s8cbv"]
+[ext_resource type="Script" path="res://src/core/TimeBar.gd" id="5_l6w0t"]
+
+[sub_resource type="SystemFont" id="SystemFont_nnir8"]
+
+[sub_resource type="Theme" id="Theme_2l82r"]
 
 [node name="RootScene" type="Node2D"]
 script = ExtResource("1_n7fwb")
@@ -16,3 +22,30 @@ offset_bottom = 40.0
 [node name="TimeController" parent="." instance=ExtResource("1_n223u")]
 
 [node name="LevelManager" parent="." instance=ExtResource("4_4wkn0")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TimeCounter" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 11.0
+offset_right = 64.0
+offset_bottom = 63.0
+theme_override_fonts/font = SubResource("SystemFont_nnir8")
+theme_override_font_sizes/font_size = 30
+script = ExtResource("4_s8cbv")
+
+[node name="TimeBar" type="TextureProgressBar" parent="Control"]
+z_index = 1
+layout_mode = 0
+offset_left = 66.0
+offset_top = 21.0
+offset_right = 213.0
+offset_bottom = 61.0
+theme = SubResource("Theme_2l82r")
+value = 100.0
+script = ExtResource("5_l6w0t")
