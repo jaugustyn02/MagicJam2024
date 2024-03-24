@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvvrwkbeegbx"
-path="res://.godot/imported/grass.PNG-6295e2e7e3043ec47f7ec55d3f814de4.ctex"
+uid="uid://bhcqu023fr14l"
+path="res://.godot/imported/hourglass.png-c3061a35a49850e9dd5cb1294a6e7732.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/background_mountains2/grass.PNG"
-dest_files=["res://.godot/imported/grass.PNG-6295e2e7e3043ec47f7ec55d3f814de4.ctex"]
+source_file="res://resources/collectibles/hourglass.png"
+dest_files=["res://.godot/imported/hourglass.png-c3061a35a49850e9dd5cb1294a6e7732.ctex"]
 
 [params]
 

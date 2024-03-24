@@ -1,9 +1,10 @@
-[gd_scene load_steps=38 format=3 uid="uid://bgrlwqk04wnx4"]
+[gd_scene load_steps=40 format=3 uid="uid://bgrlwqk04wnx4"]
 
 [ext_resource type="Script" path="res://src/character/TestPlayer.gd" id="1_g7qy8"]
 [ext_resource type="Texture2D" uid="uid://dgcm2h5od45yj" path="res://resources/Individual Sprites/adventurer-idle-00.png" id="2_axhvv"]
 [ext_resource type="Texture2D" uid="uid://51m2ey7yhhen" path="res://resources/Individual Sprites/adventurer-fall-00.png" id="2_qp3ld"]
 [ext_resource type="Texture2D" uid="uid://ckl82efnynfyg" path="res://resources/Individual Sprites/adventurer-attack1-00.png" id="2_trvem"]
+[ext_resource type="PackedScene" uid="uid://fo2g8pcl7m5l" path="res://src/entities/Spear.tscn" id="2_wu5o5"]
 [ext_resource type="Texture2D" uid="uid://28475t0608vd" path="res://resources/Individual Sprites/adventurer-idle-01.png" id="3_7alye"]
 [ext_resource type="Texture2D" uid="uid://cq5gfgd0i3iel" path="res://resources/Individual Sprites/adventurer-fall-01.png" id="3_e6wwc"]
 [ext_resource type="Texture2D" uid="uid://dwr3o68v55wqb" path="res://resources/Individual Sprites/adventurer-attack1-01.png" id="3_i1ui0"]
@@ -20,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://dla4sorpdidcd" path="res://resources/Individual Sprites/adventurer-run-03.png" id="7_y4pfq"]
 [ext_resource type="Texture2D" uid="uid://2y7vo3o845un" path="res://resources/Individual Sprites/adventurer-run-04.png" id="8_p3q40"]
 [ext_resource type="Texture2D" uid="uid://bwarw340b4p15" path="res://resources/Individual Sprites/adventurer-run-05.png" id="9_hgm07"]
+[ext_resource type="PackedScene" uid="uid://b8ut22ynklnrj" path="res://src/player_control/cursor_pointer.tscn" id="22_ttdd4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0f4up"]
 radius = 21.0
@@ -50,6 +52,9 @@ properties/6/replication_mode = 1
 properties/7/path = NodePath("AttackHitbox:scale")
 properties/7/spawn = true
 properties/7/replication_mode = 1
+properties/8/path = NodePath("CursorPointer:rotation")
+properties/8/spawn = true
+properties/8/replication_mode = 1
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jrgsd"]
 animations = [{
@@ -343,6 +348,7 @@ radius = 37.054
 
 [node name="TestPlayer" type="CharacterBody2D"]
 script = ExtResource("1_g7qy8")
+projectile = ExtResource("2_wu5o5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
@@ -384,5 +390,7 @@ shape = SubResource("CapsuleShape2D_1ula4")
 position = Vector2(26, -11)
 rotation = 1.57079
 shape = SubResource("CircleShape2D_w5ajm")
+
+[node name="CursorPointer" parent="." instance=ExtResource("22_ttdd4")]
 
 [connection signal="area_entered" from="PlayerHitbox" to="." method="_on_player_hitbox_area_entered"]
