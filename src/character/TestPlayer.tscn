@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bgrlwqk04wnx4"]
+[gd_scene load_steps=38 format=3 uid="uid://bgrlwqk04wnx4"]
 
 [ext_resource type="Script" path="res://src/character/TestPlayer.gd" id="1_g7qy8"]
 [ext_resource type="Texture2D" uid="uid://dgcm2h5od45yj" path="res://resources/Individual Sprites/adventurer-idle-00.png" id="2_axhvv"]
@@ -296,6 +296,15 @@ states/Idle/position = Vector2(382, 119)
 states/Start/position = Vector2(192, 106)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_a5uol")]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_b5cwr"]
+radius = 33.0151
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w5ajm"]
+radius = 37.054
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rgvdf"]
+radius = 39.0128
+
 [node name="TestPlayer" type="CharacterBody2D"]
 script = ExtResource("1_g7qy8")
 
@@ -311,8 +320,7 @@ texture_filter = 1
 position = Vector2(4, -7)
 scale = Vector2(2.5025, 2.13123)
 sprite_frames = SubResource("SpriteFrames_jrgsd")
-animation = &"Idle"
-frame = 1
+animation = &"Attack"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -326,3 +334,22 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_kwd8a")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(-0.904, 0.174603)
+
+[node name="PlayerHitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitbox"]
+position = Vector2(1, 3)
+shape = SubResource("CircleShape2D_b5cwr")
+
+[node name="AttackHitboxRight" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitboxRight"]
+position = Vector2(25, -11)
+rotation = 1.57079
+shape = SubResource("CircleShape2D_w5ajm")
+
+[node name="AttackHitboxLeft" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitboxLeft"]
+position = Vector2(-28, -11)
+shape = SubResource("CircleShape2D_rgvdf")
