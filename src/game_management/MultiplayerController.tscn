@@ -7,49 +7,57 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 6.0
+offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gqf14")
 
 [node name="Host" type="Button" parent="."]
 layout_mode = 0
-offset_left = 313.0
-offset_top = 282.0
-offset_right = 434.0
-offset_bottom = 342.0
+offset_left = 616.0
+offset_top = 525.0
+offset_right = 796.0
+offset_bottom = 633.0
+theme_override_font_sizes/font_size = 37
 text = "Host"
 
 [node name="Join" type="Button" parent="."]
 layout_mode = 0
-offset_left = 503.0
-offset_top = 281.0
-offset_right = 624.0
-offset_bottom = 341.0
+offset_left = 865.0
+offset_top = 524.0
+offset_right = 1035.0
+offset_bottom = 633.0
+theme_override_font_sizes/font_size = 37
 text = "Join
 "
 
 [node name="StartGame" type="Button" parent="."]
 layout_mode = 0
-offset_left = 691.0
-offset_top = 282.0
-offset_right = 812.0
-offset_bottom = 342.0
+offset_left = 1098.0
+offset_top = 526.0
+offset_right = 1262.0
+offset_bottom = 631.0
+theme_override_font_sizes/font_size = 31
 text = "Start Game"
 
 [node name="LineEdit" type="LineEdit" parent="."]
 layout_mode = 0
-offset_left = 389.0
-offset_top = 225.0
-offset_right = 723.0
-offset_bottom = 256.0
+offset_left = 733.0
+offset_top = 431.0
+offset_right = 1192.0
+offset_bottom = 495.0
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 319.0
-offset_top = 228.0
-offset_right = 366.0
-offset_bottom = 251.0
+offset_left = 553.0
+offset_top = 415.0
+offset_right = 693.0
+offset_bottom = 503.0
+theme_override_font_sizes/font_size = 39
 text = "Name"
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [connection signal="button_down" from="Host" to="." method="_on_host_button_down"]
 [connection signal="button_down" from="Join" to="." method="_on_join_button_down"]
