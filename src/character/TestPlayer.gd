@@ -161,10 +161,19 @@ func on_time_multiplier_changed(new_time_multiplier):
 	time_multiplier = new_time_multiplier
 	anim.speed_scale = time_multiplier
 
+func take_damage(color):
+	self.modulate = color
+	await get_tree().create_timer(0.3).timeout
+	self.modulate = Color.WHITE
+
 func _on_player_hitbox_area_entered(area):
 	if area != $AttackHitbox:
 		if "playerNode2D" in area.get_parent():
 			if area.get_parent().playerNode2D != self:
 				lifetime -= SWORD_DAMAGE
+				take_damage(Color.RED)
 		else:
 			lifetime -= SWORD_DAMAGE
+			take_damage(Color.RED)
+		
+		
