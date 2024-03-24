@@ -119,7 +119,7 @@ animations = [{
 "speed": 20.0
 }]
 
-[node name="Area2D" type="Area2D"]
+[node name="Hourglass" type="Area2D"]
 gravity_space_override = 3
 script = ExtResource("1_jqb4w")
 

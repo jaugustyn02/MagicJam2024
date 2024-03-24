@@ -2,6 +2,7 @@ extends Control
 
 @export var Address = "127.0.0.1"
 @export var Port = 2137
+
 var peer
 
 # Called when the node enters the scene tree for the first time.
