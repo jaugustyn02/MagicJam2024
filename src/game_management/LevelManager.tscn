@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://sv6gi2mgs0b7"]
+
+[ext_resource type="Script" path="res://src/game_management/LevelManager.gd" id="1_lh2at"]
+[ext_resource type="PackedScene" uid="uid://6njsu6t6ajot" path="res://src/level/TestLevel.tscn" id="2_ao0p8"]
+
+[node name="LevelManager" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_lh2at")
+
+[node name="Level" parent="." instance=ExtResource("2_ao0p8")]

@@ -1,21 +1,28 @@
-extends Node2D
+extends Control
 
-@export var PlayerScene: PackedScene
+signal entity_change_gear
 
+@export var CharacterScene: PackedScene
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var index = 0
 	for i in GameManager.Players:
-		var currentPlayer = PlayerScene.instantiate()
+		var currentPlayer = CharacterScene.instantiate()
+		
 		currentPlayer.name = str(GameManager.Players[i].id)
 		add_child(currentPlayer)
-		for spawn in get_tree().get_nodes_in_group("PlayerSpawnPoint"):
+		for spawn in $Level.get_tree().get_nodes_in_group("PlayerSpawnPoint"):
 			if spawn.name == str(index):
+				print("uu")
 				currentPlayer.global_position = spawn.global_position
 		index += 1
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+	
+func on_time_manager_gear_changed(gear):
+	for child in get_children():
+		child.on_gear_changed(gear)
+

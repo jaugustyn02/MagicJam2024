@@ -1,12 +1,12 @@
-[gd_scene format=3 uid="uid://cqjsmgq438py"]
+[gd_scene load_steps=5 format=3 uid="uid://cqjsmgq438py"]
+
+[ext_resource type="Script" path="res://src/core/RootScene.gd" id="1_n7fwb"]
+[ext_resource type="PackedScene" uid="uid://duppseykdo0cy" path="res://src/game_management/TimeController.tscn" id="1_n223u"]
+[ext_resource type="PackedScene" uid="uid://sv6gi2mgs0b7" path="res://src/game_management/LevelManager.tscn" id="4_4wkn0"]
+[ext_resource type="PackedScene" uid="uid://dwwrymyw0drjn" path="res://src/character/Character.tscn" id="5_himv4"]
 
 [node name="RootScene" type="Node2D"]
-
-[node name="TimeController" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+script = ExtResource("1_n7fwb")
 
 [node name="MusicController" type="Control" parent="."]
 layout_mode = 3
@@ -14,4 +14,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Level" type="Node2D" parent="."]
+[node name="TimeController" parent="." instance=ExtResource("1_n223u")]
+
+[node name="LevelManager" parent="." instance=ExtResource("4_4wkn0")]
+CharacterScene = ExtResource("5_himv4")

@@ -1,15 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://6njsu6t6ajot"]
+[gd_scene load_steps=4 format=3 uid="uid://6njsu6t6ajot"]
 
-[ext_resource type="Script" path="res://src/game_management/SceneManager.gd" id="1_if5dc"]
-[ext_resource type="PackedScene" uid="uid://bgrlwqk04wnx4" path="res://src/character/TestPlayer.tscn" id="2_taq2s"]
+[ext_resource type="Script" path="res://src/level/TestLevel.gd" id="1_oiwed"]
 [ext_resource type="Texture2D" uid="uid://cydfu7tvwi2v8" path="res://resources/icon.svg" id="3_hf6kg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lgdcc"]
 size = Vector2(1151, 40)
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_if5dc")
-PlayerScene = ExtResource("2_taq2s")
+script = ExtResource("1_oiwed")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -25,7 +23,7 @@ texture = ExtResource("3_hf6kg")
 [node name="SprawnLocations" type="Node2D" parent="."]
 
 [node name="0" type="Node2D" parent="SprawnLocations" groups=["PlayerSpawnPoint"]]
-position = Vector2(211, 568)
+position = Vector2(212, 526)
 
 [node name="1" type="Node2D" parent="SprawnLocations" groups=["PlayerSpawnPoint"]]
-position = Vector2(1017, 563)
+position = Vector2(1015, 523)
