@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://src/ui/Button.gd" id="1_6o7ui"]
 
 [sub_resource type="SystemFont" id="SystemFont_awvu6"]
+subpixel_positioning = 0
 msdf_pixel_range = 22
 
 [node name="EndScreen" type="ColorRect"]
@@ -25,6 +26,7 @@ text = "Play Again?"
 script = ExtResource("1_6o7ui")
 
 [node name="Button2" type="Button" parent="."]
+layout_mode = 0
 offset_left = 587.0
 offset_top = 621.0
 offset_right = 1295.0

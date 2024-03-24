@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cqjsmgq438py"]
+[gd_scene load_steps=12 format=3 uid="uid://cqjsmgq438py"]
 
 [ext_resource type="Script" path="res://src/core/RootScene.gd" id="1_n7fwb"]
 [ext_resource type="PackedScene" uid="uid://duppseykdo0cy" path="res://src/game_management/TimeController.tscn" id="1_n223u"]
