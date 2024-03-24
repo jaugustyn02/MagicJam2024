@@ -1,0 +1,140 @@
+[gd_scene load_steps=20 format=3 uid="uid://b5mrvvkcfkjpf"]
+
+[ext_resource type="Texture2D" uid="uid://bhcqu023fr14l" path="res://resources/collectibles/hourglass.png" id="1_cx18j"]
+[ext_resource type="Script" path="res://src/collectibles/hourglass.gd" id="1_jqb4w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkmwa"]
+size = Vector2(3.15, 4.1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfjt0"]
+atlas = ExtResource("1_cx18j")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g354h"]
+atlas = ExtResource("1_cx18j")
+region = Rect2(42, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxekt"]
+atlas = ExtResource("1_cx18j")
+region = Rect2(84, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xa43x"]
+atlas = ExtResource("1_cx18j")
+region = Rect2(126, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rn0ca"]
+atlas = ExtResource("1_cx18j")
+region = Rect2(168, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtusp"]
+atlas = ExtResource("1_cx18j")
+region = Rect2(210, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0ey0"]
+atlas = ExtResource("1_cx18j")
+region = Rect2(252, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1myc5"]
+atlas = ExtResource("1_cx18j")
+region = Rect2(294, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgabb"]
+atlas = ExtResource("1_cx18j")
+region = Rect2(336, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qp1e5"]
+atlas = ExtResource("1_cx18j")
+region = Rect2(378, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvy8v"]
+atlas = ExtResource("1_cx18j")
+region = Rect2(420, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_143pu"]
+atlas = ExtResource("1_cx18j")
+region = Rect2(462, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11ctb"]
+atlas = ExtResource("1_cx18j")
+region = Rect2(504, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_civjf"]
+atlas = ExtResource("1_cx18j")
+region = Rect2(546, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_csac1"]
+atlas = ExtResource("1_cx18j")
+region = Rect2(588, 0, 42, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q3s53"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfjt0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g354h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxekt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xa43x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rn0ca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtusp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0ey0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1myc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgabb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qp1e5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvy8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_143pu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11ctb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_civjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_csac1")
+}],
+"loop": true,
+"name": &"Animation",
+"speed": 20.0
+}]
+
+[node name="Area2D" type="Area2D"]
+gravity_space_override = 3
+script = ExtResource("1_jqb4w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+texture_filter = 2
+position = Vector2(-2.00001, 1.90735e-06)
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_kkmwa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-1.99998, 0)
+scale = Vector2(1.05952, 1.0119)
+sprite_frames = SubResource("SpriteFrames_q3s53")
+animation = &"Animation"
+frame_progress = 0.46096
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ca4tkwnof2d1e" path="res://resources/background_mountains2/background.PNG" id="5_74qfs"]
 [ext_resource type="Texture2D" uid="uid://0uk2y4imqeo5" path="res://resources/background_mountains2/Furthest mountains.PNG" id="6_cpyme"]
 [ext_resource type="Texture2D" uid="uid://cpu6abq138lmt" path="res://resources/background_mountains2/mountains2.PNG" id="7_yf2fd"]
+[ext_resource type="Script" path="res://src/level/Collectables.gd" id="8_0jkxd"]
 [ext_resource type="Texture2D" uid="uid://eo7qm6iukqdd" path="res://resources/background_mountains2/Nearest mountains.PNG" id="8_cqw81"]
 [ext_resource type="Texture2D" uid="uid://c4qe0b5c20kbn" path="res://resources/background_mountains2/Foreground.PNG" id="9_d2gpw"]
 [ext_resource type="Texture2D" uid="uid://bxox6f7xdm6o4" path="res://resources/background_mountains2/stone.PNG" id="10_orx60"]
@@ -220,3 +221,12 @@ position = Vector2(212, 526)
 
 [node name="1" type="Node2D" parent="SprawnLocations" groups=["PlayerSpawnPoint"]]
 position = Vector2(1015, 523)
+
+[node name="Collectables" type="Node" parent="."]
+script = ExtResource("8_0jkxd")
+
+[node name="Timer" type="Timer" parent="Collectables"]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Collectables/Timer" to="Collectables" method="_on_timer_timeout"]

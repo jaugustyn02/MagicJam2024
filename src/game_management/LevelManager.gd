@@ -18,6 +18,7 @@ func _ready():
 			hostCharacterNode = currentPlayer
 		else:
 			guestCharacterNode = currentPlayer
+		currentPlayer.name = str(GameManager.Players[i].id)
 		
 		for spawn in $Level.get_tree().get_nodes_in_group("PlayerSpawnPoint"):
 			if spawn.name == str(index):
