@@ -1,6 +1,6 @@
 extends Control
 
-@export var Address = "127.0.0.1"
+@export var Address = "0.0.0.0"
 @export var Port = 2137
 var peer
 
@@ -54,7 +54,7 @@ func _on_host_button_down():
 	if error != OK:
 		print("Cannot host: ", error)
 		return
-	peer.get_host().compress(ENetConnection.COMPRESS_RANGE_CODER)
+	peer.get_host().compress(ENetConnection.COMPRESS_ZLIB)
 	
 	multiplayer.set_multiplayer_peer(peer)
 	print("Waiting for Players")
@@ -63,7 +63,7 @@ func _on_host_button_down():
 func _on_join_button_down():
 	peer = ENetMultiplayerPeer.new()
 	peer.create_client(Address, Port)
-	peer.get_host().compress(ENetConnection.COMPRESS_RANGE_CODER)
+	peer.get_host().compress(ENetConnection.COMPRESS_ZLIB)
 	multiplayer.set_multiplayer_peer(peer)
 
 
