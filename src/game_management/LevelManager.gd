@@ -22,7 +22,9 @@ func _ready():
 func _process(delta):
 	pass
 	
-func on_time_manager_gear_changed(gear):
+func on_time_multiplier_changed(time_multiplier):
+	print("mult2:")
+	print(time_multiplier)
 	for child in get_children():
-		child.on_gear_changed(gear)
+		child.on_time_multiplier_changed(time_multiplier)
 

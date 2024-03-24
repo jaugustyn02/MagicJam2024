@@ -10,5 +10,5 @@ func _ready():
 func _process(delta):
 	pass
 
-func on_gear_changed(gear):
+func on_time_multiplier_changed(gear):
 	pass
