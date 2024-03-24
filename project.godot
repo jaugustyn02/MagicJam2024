@@ -11,10 +11,10 @@ config_version=5
 [application]
 
 config/name="MagicJam2024"
-run/main_scene="res://scenes/MultiplayerController.tscn"
+run/main_scene="res://src/game_management/MultiplayerController.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://resources/icon.svg"
 
 [autoload]
 
-GameManager="*res://GameManager.gd"
+GameManager="*res://src/game_management/GameManager.gd"

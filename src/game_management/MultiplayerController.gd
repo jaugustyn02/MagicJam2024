@@ -47,7 +47,7 @@ func SendPlayerInformation(name, id):
 
 @rpc("any_peer", "call_local")
 func StartGame():
-	var scene = load("res://scenes/TestScene.tscn").instantiate()
+	var scene = load("res://src/level/TestLevel.tscn").instantiate()
 	get_tree().root.add_child(scene)
 	self.hide()
 

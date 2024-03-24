@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://6njsu6t6ajot"]
 
-[ext_resource type="Script" path="res://scenes/SceneManager.gd" id="1_3dq06"]
-[ext_resource type="PackedScene" uid="uid://bgrlwqk04wnx4" path="res://characters/TestPlayer.tscn" id="2_clq21"]
+[ext_resource type="Script" path="res://src/game_management/SceneManager.gd" id="1_3dq06"]
+[ext_resource type="PackedScene" uid="uid://bgrlwqk04wnx4" path="res://src/character/TestPlayer.tscn" id="2_clq21"]
 [ext_resource type="Texture2D" uid="uid://owy2ofsi86mi" path="res://resources/background_mountains2/floor_long.PNG" id="3_0vf8o"]
 [ext_resource type="Texture2D" uid="uid://bmd1wv088ov3f" path="res://resources/background_mountains2/platform1.PNG" id="4_bvoux"]
 [ext_resource type="Texture2D" uid="uid://ca4tkwnof2d1e" path="res://resources/background_mountains2/background.PNG" id="5_74qfs"]
@@ -94,7 +94,6 @@ shape = SubResource("RectangleShape2D_r5ois")
 
 [node name="CollisionFloor" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(577, 624)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_lgdcc")
 
 [node name="Background" type="Sprite2D" parent="StaticBody2D"]
