@@ -74,7 +74,7 @@ func _physics_process(delta):
 		elif gravity_counter2 > 0:
 			mul = 2
 		velocity.y += mul * gravity * delta * (time_multiplier ** 2)
-  else:
+	else:
 		double_jump_available = true
 	
 	gravity_counter1 -= delta
@@ -161,10 +161,19 @@ func on_time_multiplier_changed(new_time_multiplier):
 	time_multiplier = new_time_multiplier
 	anim.speed_scale = time_multiplier
 
+func take_damage(color):
+	self.modulate = color
+	await get_tree().create_timer(0.3).timeout
+	self.modulate = Color.WHITE
+
 func _on_player_hitbox_area_entered(area):
 	if area != $AttackHitbox:
 		if "playerNode2D" in area.get_parent():
 			if area.get_parent().playerNode2D != self:
 				lifetime -= SWORD_DAMAGE
+				take_damage(Color.RED)
 		else:
 			lifetime -= SWORD_DAMAGE
+			take_damage(Color.RED)
+		
+		
