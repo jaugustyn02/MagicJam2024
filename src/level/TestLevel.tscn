@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://6njsu6t6ajot"]
+[gd_scene load_steps=10 format=3 uid="uid://6njsu6t6ajot"]
 
 [ext_resource type="Script" path="res://src/level/TestLevel.gd" id="1_7dhi7"]
 [ext_resource type="Texture2D" uid="uid://owy2ofsi86mi" path="res://resources/background_mountains2/floor_long.PNG" id="3_0vf8o"]
@@ -7,20 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://0uk2y4imqeo5" path="res://resources/background_mountains2/Furthest mountains.PNG" id="6_cpyme"]
 [ext_resource type="Texture2D" uid="uid://cpu6abq138lmt" path="res://resources/background_mountains2/mountains2.PNG" id="7_yf2fd"]
 [ext_resource type="Texture2D" uid="uid://eo7qm6iukqdd" path="res://resources/background_mountains2/Nearest mountains.PNG" id="8_cqw81"]
-[ext_resource type="Script" path="res://src/core/TimeCounter.gd" id="8_sqxrl"]
-[ext_resource type="Script" path="res://src/core/TimeBar.gd" id="9_blcbw"]
-[ext_resource type="Texture2D" uid="uid://chnmscyolarmo" path="res://resources/ui/health_bar_behind.png" id="9_v26fj"]
-[ext_resource type="Texture2D" uid="uid://dh63y7kw8gve1" path="res://resources/ui/health_bar_progress.png" id="10_f5b4u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5ois"]
 size = Vector2(133.216, 76.4179)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lgdcc"]
 size = Vector2(1154, 50)
-
-[sub_resource type="SystemFont" id="SystemFont_26pod"]
-
-[sub_resource type="Theme" id="Theme_q1wxs"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_7dhi7")
@@ -129,38 +121,6 @@ texture_filter = 1
 position = Vector2(576, 326)
 scale = Vector2(2.51304, 2.584)
 texture = ExtResource("8_cqw81")
-
-[node name="Control" type="Control" parent="StaticBody2D"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TimeCounter" type="Label" parent="StaticBody2D/Control"]
-layout_mode = 0
-offset_left = 26.0
-offset_top = 13.0
-offset_right = 78.0
-offset_bottom = 65.0
-theme_override_fonts/font = SubResource("SystemFont_26pod")
-theme_override_font_sizes/font_size = 30
-text = "180"
-script = ExtResource("8_sqxrl")
-
-[node name="TimeBar" type="TextureProgressBar" parent="StaticBody2D/Control"]
-z_index = 1
-layout_mode = 0
-offset_left = 87.0
-offset_top = 17.0
-offset_right = 267.0
-offset_bottom = 58.0
-scale = Vector2(2, 1)
-theme = SubResource("Theme_q1wxs")
-max_value = 180.0
-value = 180.0
-texture_under = ExtResource("9_v26fj")
-texture_progress = ExtResource("10_f5b4u")
-script = ExtResource("9_blcbw")
 
 [node name="SprawnLocations" type="Node2D" parent="."]
 

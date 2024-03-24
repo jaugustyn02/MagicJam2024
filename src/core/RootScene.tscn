@@ -1,14 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqjsmgq438py"]
+[gd_scene load_steps=10 format=3 uid="uid://cqjsmgq438py"]
 
 [ext_resource type="Script" path="res://src/core/RootScene.gd" id="1_n7fwb"]
 [ext_resource type="PackedScene" uid="uid://duppseykdo0cy" path="res://src/game_management/TimeController.tscn" id="1_n223u"]
 [ext_resource type="PackedScene" uid="uid://sv6gi2mgs0b7" path="res://src/game_management/LevelManager.tscn" id="4_4wkn0"]
+[ext_resource type="Script" path="res://src/core/PlayerHUD.gd" id="4_i2xps"]
 [ext_resource type="Script" path="res://src/core/TimeCounter.gd" id="4_s8cbv"]
 [ext_resource type="Script" path="res://src/core/TimeBar.gd" id="5_l6w0t"]
 
 [sub_resource type="SystemFont" id="SystemFont_nnir8"]
 
-[sub_resource type="Theme" id="Theme_2l82r"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q73ba"]
+bg_color = Color(0.545098, 0, 0.0235294, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pccrh"]
+bg_color = Color(0, 0.666667, 0.803922, 1)
 
 [node name="RootScene" type="Node2D"]
 script = ExtResource("1_n7fwb")
@@ -22,30 +27,65 @@ offset_bottom = 40.0
 [node name="TimeController" parent="." instance=ExtResource("1_n223u")]
 
 [node name="LevelManager" parent="." instance=ExtResource("4_4wkn0")]
+scale = Vector2(1.6631, 1.663)
 
-[node name="Control" type="Control" parent="."]
+[node name="HostHUD" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("4_i2xps")
 
-[node name="TimeCounter" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = 12.0
-offset_top = 11.0
-offset_right = 64.0
-offset_bottom = 63.0
-theme_override_fonts/font = SubResource("SystemFont_nnir8")
-theme_override_font_sizes/font_size = 30
-script = ExtResource("4_s8cbv")
-
-[node name="TimeBar" type="TextureProgressBar" parent="Control"]
+[node name="TimeCounter" type="Label" parent="HostHUD"]
 z_index = 1
 layout_mode = 0
-offset_left = 66.0
-offset_top = 21.0
-offset_right = 213.0
-offset_bottom = 61.0
-theme = SubResource("Theme_2l82r")
-value = 100.0
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 88.0
+offset_bottom = 60.0
+theme_override_fonts/font = SubResource("SystemFont_nnir8")
+theme_override_font_sizes/font_size = 30
+text = "180.0
+"
+script = ExtResource("4_s8cbv")
+
+[node name="TimeBar" type="ProgressBar" parent="HostHUD"]
+layout_mode = 0
+offset_right = 960.0
+offset_bottom = 60.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_q73ba")
+max_value = 180.0
+value = 180.0
+show_percentage = false
+script = ExtResource("5_l6w0t")
+
+[node name="GuestHUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_i2xps")
+
+[node name="TimeCounter" type="Label" parent="GuestHUD"]
+z_index = 1
+layout_mode = 0
+offset_left = 1838.0
+offset_top = 8.0
+offset_right = 1920.0
+offset_bottom = 60.0
+theme_override_fonts/font = SubResource("SystemFont_nnir8")
+theme_override_font_sizes/font_size = 30
+text = "180.0"
+script = ExtResource("4_s8cbv")
+
+[node name="TimeBar" type="ProgressBar" parent="GuestHUD"]
+layout_mode = 0
+offset_left = 960.0
+offset_right = 1920.0
+offset_bottom = 60.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_pccrh")
+max_value = 180.0
+value = 180.0
+fill_mode = 1
+show_percentage = false
 script = ExtResource("5_l6w0t")

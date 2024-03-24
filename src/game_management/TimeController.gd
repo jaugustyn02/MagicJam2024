@@ -1,6 +1,7 @@
 extends Control
 
 signal time_multiplier_changed(time_multiplier)
+signal gear_changed(gear)
 
 const time_multipliers = {1: 0.5, 2: 0.67, 3: 1.0, 4: 1.5, 5: 2.0}
 const absolute_gear_actions = {"gear_1": 1, "gear_2": 2, "gear_3": 3, "gear_4": 4, "gear_5": 5}
@@ -36,4 +37,4 @@ func change_gear():
 	
 	if prev_time_gear != time_gear:
 		time_multiplier_changed.emit(time_multipliers[time_gear])
-	
+		gear_changed.emit(time_gear)
