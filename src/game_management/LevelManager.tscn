@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/game_management/LevelManager.gd" id="1_lh2at"]
 [ext_resource type="PackedScene" uid="uid://6njsu6t6ajot" path="res://src/level/TestLevel.tscn" id="2_ao0p8"]
-[ext_resource type="PackedScene" uid="uid://bu7ew8oiv2of2" path="res://src/character/TestPlayer.tscn" id="2_rbema"]
+[ext_resource type="PackedScene" uid="uid://bgrlwqk04wnx4" path="res://src/character/TestPlayer.tscn" id="2_rbema"]
 
 [node name="LevelManager" type="Control"]
 layout_mode = 3
