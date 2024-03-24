@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=10 format=3 uid="uid://6njsu6t6ajot"]
 
 [ext_resource type="Script" path="res://src/level/TestLevel.gd" id="1_7dhi7"]
@@ -11,8 +12,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5ois"]
 size = Vector2(133.216, 76.4179)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgdcc"]
-size = Vector2(1154, 50)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4x58y"]
+size = Vector2(62.0001, 1083.99)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j8tdh"]
+size = Vector2(62.0001, 1197)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_7dhi7")
@@ -90,9 +94,21 @@ position = Vector2(1000, 180)
 scale = Vector2(2.49219, 0.523438)
 shape = SubResource("RectangleShape2D_r5ois")
 
+[node name="BlockingWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1187, 100.996)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_4x58y")
+
+[node name="BlockingWall2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-31, 95)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_4x58y")
+
 [node name="CollisionFloor" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(577, 624)
-shape = SubResource("RectangleShape2D_lgdcc")
+position = Vector2(586, 633)
+rotation = 1.5708
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_j8tdh")
 
 [node name="Background" type="Sprite2D" parent="StaticBody2D"]
 z_index = -5
