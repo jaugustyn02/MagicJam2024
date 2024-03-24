@@ -18,9 +18,6 @@ func _physics_process(delta):
 	if $MultiplayerSynchronizer.get_multiplayer_authority() != playerID:
 		return
 		
-	$AnimatedSprite2D.play("default")
-	
-		
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * (time_multiplier ** 2) * delta
@@ -40,5 +37,4 @@ func _physics_process(delta):
 	move_and_slide()
 
 func on_time_multiplier_changed(new_time_multiplier):
-	print(new_time_multiplier)
 	time_multiplier = new_time_multiplier

@@ -35,9 +35,5 @@ func change_gear():
 	time_multiplier = time_multipliers[time_gear]
 	
 	if prev_time_gear != time_gear:
-		print("gear:")
-		print(time_gear)
-		print("mult:")
-		print(time_multiplier)
 		time_multiplier_changed.emit(time_multipliers[time_gear])
 	
