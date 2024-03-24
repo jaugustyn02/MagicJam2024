@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://6njsu6t6ajot"]
+[gd_scene load_steps=14 format=3 uid="uid://6njsu6t6ajot"]
 
 [ext_resource type="Script" path="res://src/level/TestLevel.gd" id="1_7dhi7"]
 [ext_resource type="Texture2D" uid="uid://owy2ofsi86mi" path="res://resources/background_mountains2/floor_long.PNG" id="3_0vf8o"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://0uk2y4imqeo5" path="res://resources/background_mountains2/Furthest mountains.PNG" id="6_cpyme"]
 [ext_resource type="Texture2D" uid="uid://cpu6abq138lmt" path="res://resources/background_mountains2/mountains2.PNG" id="7_yf2fd"]
 [ext_resource type="Texture2D" uid="uid://eo7qm6iukqdd" path="res://resources/background_mountains2/Nearest mountains.PNG" id="8_cqw81"]
-[ext_resource type="Texture2D" uid="uid://c4qe0b5c20kbn" path="res://resources/background_mountains2/Foreground.png" id="9_d2gpw"]
+[ext_resource type="Texture2D" uid="uid://c4qe0b5c20kbn" path="res://resources/background_mountains2/Foreground.PNG" id="9_d2gpw"]
 [ext_resource type="Texture2D" uid="uid://bxox6f7xdm6o4" path="res://resources/background_mountains2/stone.PNG" id="10_orx60"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5ois"]
