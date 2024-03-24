@@ -29,7 +29,7 @@ func connected_to_server():
 	
 func connection_failed():
 	print("Couldn't Connect to Server")
-	
+
 @rpc("any_peer")
 func SendPlayerInformation(name, id):
 	if !GameManager.Players.has(id):
