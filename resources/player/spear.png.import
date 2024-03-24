@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvvrwkbeegbx"
-path="res://.godot/imported/grass.PNG-6295e2e7e3043ec47f7ec55d3f814de4.ctex"
+uid="uid://c7e0w02qm20ke"
+path="res://.godot/imported/spear.png-9fd889116957f65b29bc0dd32d7c05eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/background_mountains2/grass.PNG"
-dest_files=["res://.godot/imported/grass.PNG-6295e2e7e3043ec47f7ec55d3f814de4.ctex"]
+source_file="res://resources/player/spear.png"
+dest_files=["res://.godot/imported/spear.png-9fd889116957f65b29bc0dd32d7c05eb.ctex"]
 
 [params]
 
