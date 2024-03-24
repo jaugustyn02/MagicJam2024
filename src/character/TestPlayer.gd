@@ -7,7 +7,7 @@ const INITIAL_LIFETIME = 180.0
 
 var PlayerID: int
 
-var lifetime: float = INITIAL_LIFETIME
+@export var lifetime: float = INITIAL_LIFETIME
 var time_multiplier: float = 1.0
 @onready var active_attack_hitbox = $AttackHitboxRight
 
