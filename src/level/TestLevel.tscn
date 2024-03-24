@@ -297,6 +297,7 @@ position = Vector2(1015, 523)
 script = ExtResource("8_0jkxd")
 
 [node name="Timer" type="Timer" parent="Collectables"]
+process_callback = 0
 wait_time = 5.0
 autostart = true
 

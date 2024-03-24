@@ -10,6 +10,7 @@ func _on_body_entered(body):
 		tween1.tween_callback(queue_free)
 		body.gravity_counter1 = 8
 		body.gravity_counter2 = -1
+		body.lifetime = min(body.INITIAL_LIFETIME, body.lifetime + 10)
 		get_parent().count -= 1
 	else:
 		queue_free()
