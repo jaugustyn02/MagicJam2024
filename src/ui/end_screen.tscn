@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://cslpginlt0h0s"]
+
+[ext_resource type="Script" path="res://src/ui/Button.gd" id="1_6o7ui"]
+
+[sub_resource type="SystemFont" id="SystemFont_awvu6"]
+subpixel_positioning = 0
+msdf_pixel_range = 22
+
+[node name="EndScreen" type="ColorRect"]
+z_index = 16
+offset_left = -12.0
+offset_top = -16.0
+offset_right = 1928.0
+offset_bottom = 1089.0
+color = Color(0.203922, 0.203922, 0.203922, 1)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 587.0
+offset_top = 314.0
+offset_right = 1295.0
+offset_bottom = 564.0
+theme_override_fonts/font = SubResource("SystemFont_awvu6")
+theme_override_font_sizes/font_size = 70
+text = "Play Again?"
+script = ExtResource("1_6o7ui")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 587.0
+offset_top = 621.0
+offset_right = 1295.0
+offset_bottom = 871.0
+theme_override_fonts/font = SubResource("SystemFont_awvu6")
+theme_override_font_sizes/font_size = 70
+text = "Quit"
+script = ExtResource("1_6o7ui")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
