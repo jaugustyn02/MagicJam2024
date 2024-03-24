@@ -9,7 +9,7 @@ var newObject
 const maxC: int = 3
 var count: int
 var rng = RandomNumberGenerator.new()
-var timer: float = 15.0
+var timer: float = 5.0
 
 func _ready():
 	count = 0
