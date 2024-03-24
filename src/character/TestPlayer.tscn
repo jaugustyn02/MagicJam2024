@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bgrlwqk04wnx4"]
+[gd_scene load_steps=38 format=3 uid="uid://bgrlwqk04wnx4"]
 
 [ext_resource type="Script" path="res://src/character/TestPlayer.gd" id="1_g7qy8"]
 [ext_resource type="Texture2D" uid="uid://dgcm2h5od45yj" path="res://resources/Individual Sprites/adventurer-idle-00.png" id="2_axhvv"]
@@ -22,8 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://bwarw340b4p15" path="res://resources/Individual Sprites/adventurer-run-05.png" id="9_hgm07"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0f4up"]
-radius = 36.0
-height = 72.0
+radius = 21.0
+height = 66.0
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_gim6j"]
 properties/0/path = NodePath(".:position")
@@ -41,6 +41,15 @@ properties/3/replication_mode = 1
 properties/4/path = NodePath("AnimationPlayer:speed_scale")
 properties/4/spawn = true
 properties/4/replication_mode = 1
+properties/5/path = NodePath("AttackHitbox:position")
+properties/5/spawn = true
+properties/5/replication_mode = 1
+properties/6/path = NodePath("AttackHitbox:collision_layer")
+properties/6/spawn = true
+properties/6/replication_mode = 1
+properties/7/path = NodePath("AttackHitbox:scale")
+properties/7/spawn = true
+properties/7/replication_mode = 1
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jrgsd"]
 animations = [{
@@ -130,7 +139,6 @@ animations = [{
 [sub_resource type="Animation" id="Animation_7bq6i"]
 resource_name = "Attack"
 length = 0.45
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -326,20 +334,18 @@ states/Idle/position = Vector2(382, 119)
 states/Start/position = Vector2(192, 106)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_a5uol")]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_b5cwr"]
-radius = 33.0151
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1ula4"]
+radius = 21.0
+height = 66.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w5ajm"]
 radius = 37.054
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_rgvdf"]
-radius = 39.0128
 
 [node name="TestPlayer" type="CharacterBody2D"]
 script = ExtResource("1_g7qy8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 3)
+position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_0f4up")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
@@ -369,18 +375,14 @@ parameters/Idle/blend_position = Vector2(-0.904, 0.174603)
 [node name="PlayerHitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitbox"]
-position = Vector2(1, 3)
-shape = SubResource("CircleShape2D_b5cwr")
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_1ula4")
 
-[node name="AttackHitboxRight" type="Area2D" parent="."]
+[node name="AttackHitbox" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitboxRight"]
-position = Vector2(25, -11)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox"]
+position = Vector2(26, -11)
 rotation = 1.57079
 shape = SubResource("CircleShape2D_w5ajm")
 
-[node name="AttackHitboxLeft" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitboxLeft"]
-position = Vector2(-28, -11)
-shape = SubResource("CircleShape2D_rgvdf")
+[connection signal="area_entered" from="PlayerHitbox" to="." method="_on_player_hitbox_area_entered"]
