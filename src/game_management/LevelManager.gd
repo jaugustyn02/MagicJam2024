@@ -18,6 +18,7 @@ func _ready():
 			hostCharacterNode = currentPlayer
 		else:
 			guestCharacterNode = currentPlayer
+		
 		currentPlayer.name = str(GameManager.Players[i].id)
 		
 		currentPlayer.end_game.connect(get_parent().end_game)

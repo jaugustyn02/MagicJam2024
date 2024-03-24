@@ -34,8 +34,11 @@ var double_jump_available: bool = true
 
 @onready var anim = get_node("AnimationPlayer")
 
+@export var gravity_counter1: float = -1
+@export var gravity_counter2: float = -1
+ 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @rpc("any_peer", "call_local")
 func add_projectile(throw_power: float):
@@ -50,8 +53,8 @@ func add_projectile(throw_power: float):
 func _ready():
 	$MultiplayerSynchronizer.set_multiplayer_authority(str(name).to_int())
 	PlayerID = multiplayer.get_unique_id()
-	
 	$PlayerHitbox.monitoring = true
+
 	$AttackHitbox.collision_layer = 0
 	$AttackHitbox.collision_mask = 0
 	
@@ -77,11 +80,20 @@ func _physics_process(delta):
 		return
 	
 	var direction = Input.get_axis("Left", "Right")
-		
+	
 	if not is_on_floor():
-		velocity.y += gravity * delta * (time_multiplier ** 2)
+		var mul: float = 1
+		if gravity_counter1 > 0:
+			mul = 0.5
+		elif gravity_counter2 > 0:
+			mul = 2
+		velocity.y += mul * gravity * delta * (time_multiplier ** 2)
 	else:
 		double_jump_available = true
+	
+	gravity_counter1 -= delta
+	gravity_counter2 -= delta
+	
 		
 	if !is_attacking:
 		change_direction(direction)
@@ -164,11 +176,19 @@ func on_time_multiplier_changed(new_time_multiplier):
 	time_multiplier = new_time_multiplier
 	anim.speed_scale = time_multiplier
 
+func take_damage(color):
+	self.modulate = color
+	await get_tree().create_timer(0.3).timeout
+	self.modulate = Color.WHITE
+
 func _on_player_hitbox_area_entered(area):
 	if area != $AttackHitbox:
 		if "playerNode2D" in area.get_parent():
 			if area.get_parent().playerNode2D != self:
-				lifetime -= SPEAR_DAMAGE
+				lifetime -= SWORD_DAMAGE
+				take_damage(Color.RED)
 		else:
 			lifetime -= SWORD_DAMAGE
-
+			take_damage(Color.RED)
+		
+		

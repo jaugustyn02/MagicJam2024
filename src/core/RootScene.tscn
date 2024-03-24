@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://src/core/PlayerHUD.gd" id="4_i2xps"]
 [ext_resource type="Script" path="res://src/core/TimeCounter.gd" id="4_s8cbv"]
 [ext_resource type="Script" path="res://src/core/TimeBar.gd" id="5_l6w0t"]
+[ext_resource type="PackedScene" uid="uid://bkivt3oilbpka" path="res://src/sound/background_music.tscn" id="7_27b7c"]
 
 [sub_resource type="SystemFont" id="SystemFont_nnir8"]
 
@@ -95,3 +96,5 @@ value = 180.0
 fill_mode = 1
 show_percentage = false
 script = ExtResource("5_l6w0t")
+
+[node name="Background_music" parent="." instance=ExtResource("7_27b7c")]
