@@ -50,45 +50,45 @@ shape = SubResource("RectangleShape2D_r5ois")
 
 [node name="Platform3" type="Sprite2D" parent="StaticBody2D"]
 texture_filter = 1
-position = Vector2(372, 342)
+position = Vector2(250, 342)
 scale = Vector2(4, 4)
 texture = ExtResource("4_bvoux")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(372, 342)
+position = Vector2(250, 342)
 scale = Vector2(2.49219, 0.523438)
 shape = SubResource("RectangleShape2D_r5ois")
 
 [node name="Platform4" type="Sprite2D" parent="StaticBody2D"]
 texture_filter = 1
-position = Vector2(868, 343)
+position = Vector2(950, 343)
 scale = Vector2(4, 4)
 texture = ExtResource("4_bvoux")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(868, 342.5)
+position = Vector2(950, 342.5)
 scale = Vector2(2.49219, 0.523438)
 shape = SubResource("RectangleShape2D_r5ois")
 
 [node name="Platform5" type="Sprite2D" parent="StaticBody2D"]
 texture_filter = 1
-position = Vector2(371, 211)
+position = Vector2(200, 180)
 scale = Vector2(4, 4)
 texture = ExtResource("4_bvoux")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(371, 211)
+position = Vector2(200, 180)
 scale = Vector2(2.49219, 0.523438)
 shape = SubResource("RectangleShape2D_r5ois")
 
 [node name="Platform6" type="Sprite2D" parent="StaticBody2D"]
 texture_filter = 1
-position = Vector2(867, 212)
+position = Vector2(1000, 180)
 scale = Vector2(4, 4)
 texture = ExtResource("4_bvoux")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(867, 211.5)
+position = Vector2(1000, 180)
 scale = Vector2(2.49219, 0.523438)
 shape = SubResource("RectangleShape2D_r5ois")
 

@@ -1,17 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwwrymyw0drjn"]
+[gd_scene load_steps=5 format=3 uid="uid://dwwrymyw0drjn"]
 
 [ext_resource type="Script" path="res://src/character/Character.gd" id="1_bwqo2"]
+[ext_resource type="Texture2D" uid="uid://28475t0608vd" path="res://resources/Individual Sprites/adventurer-idle-01.png" id="2_rorrp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_07iq1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rorrp")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hps51"]
+size = Vector2(30, 33)
 
 [node name="Character" type="CharacterBody2D"]
 script = ExtResource("1_bwqo2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_07iq1")
+animation = &"Idle"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_hps51")
 
 [node name="Cursor" type="Node2D" parent="."]
