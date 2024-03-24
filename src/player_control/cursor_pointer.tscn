@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dur3nbsaw8vhx"]
+
+[ext_resource type="Texture2D" uid="uid://b4msv0whl2udu" path="res://resources/arrow.png" id="1_ea3xy"]
+
+[node name="CursorPointer" type="Node2D"]
+rotation = -1.56556
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(58.9992, -0.308922)
+rotation = 1.5708
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_ea3xy")
+
+[node name="ProjectileSpawn" type="Node2D" parent="."]
+position = Vector2(59.9992, -0.314158)

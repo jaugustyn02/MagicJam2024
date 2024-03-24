@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2wbuionqlcbk"]
+
+[ext_resource type="Script" path="res://src/entities/Projectile.gd" id="1_wwoje"]
+[ext_resource type="Texture2D" uid="uid://c6gt64d28rwqd" path="res://resources/spear.png" id="2_a4vio"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h8e42"]
+radius = 18.7883
+
+[node name="Projectile" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_wwoje")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 0.785398
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_a4vio")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_h8e42")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_h8e42")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

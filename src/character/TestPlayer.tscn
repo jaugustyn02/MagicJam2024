@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgrlwqk04wnx4"]
+[gd_scene load_steps=7 format=3 uid="uid://bgrlwqk04wnx4"]
 
 [ext_resource type="Script" path="res://src/character/TestPlayer.gd" id="1_g7qy8"]
 [ext_resource type="Texture2D" uid="uid://d11dw360xihqm" path="res://resources/Wooden_Hoe.png" id="1_vvnft"]
+[ext_resource type="PackedScene" uid="uid://b2wbuionqlcbk" path="res://src/entities/Projectile.tscn" id="3_wewpp"]
+[ext_resource type="PackedScene" uid="uid://dur3nbsaw8vhx" path="res://src/player_control/cursor_pointer.tscn" id="4_2w3wk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0byh2"]
 size = Vector2(48, 58)
@@ -10,9 +12,13 @@ size = Vector2(48, 58)
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
+properties/1/path = NodePath("CursorPointer:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
 
 [node name="TestPlayer" type="CharacterBody2D"]
 script = ExtResource("1_g7qy8")
+projectile = ExtResource("3_wewpp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -24,3 +30,5 @@ shape = SubResource("RectangleShape2D_0byh2")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_gim6j")
+
+[node name="CursorPointer" parent="." instance=ExtResource("4_2w3wk")]
