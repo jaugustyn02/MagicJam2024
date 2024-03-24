@@ -37,7 +37,7 @@ offset_bottom = 40.0
 script = ExtResource("4_i2xps")
 
 [node name="TimeCounter" type="Label" parent="HostHUD"]
-z_index = 1
+z_index = 10
 layout_mode = 0
 offset_left = 12.0
 offset_top = 8.0
@@ -50,6 +50,7 @@ text = "180.0
 script = ExtResource("4_s8cbv")
 
 [node name="TimeBar" type="ProgressBar" parent="HostHUD"]
+z_index = 9
 layout_mode = 0
 offset_right = 960.0
 offset_bottom = 60.0
@@ -67,7 +68,7 @@ offset_bottom = 40.0
 script = ExtResource("4_i2xps")
 
 [node name="TimeCounter" type="Label" parent="GuestHUD"]
-z_index = 1
+z_index = 10
 layout_mode = 0
 offset_left = 1838.0
 offset_top = 8.0
@@ -79,6 +80,7 @@ text = "180.0"
 script = ExtResource("4_s8cbv")
 
 [node name="TimeBar" type="ProgressBar" parent="GuestHUD"]
+z_index = 9
 layout_mode = 0
 offset_left = 960.0
 offset_right = 1920.0
