@@ -9,16 +9,20 @@ var newObject
 const maxC: int = 3
 var count: int
 var rng = RandomNumberGenerator.new()
+var timer: float = 15.0
 
 func _ready():
 	count = 0
 
 
 func _process(delta):
-	pass
+	timer -= delta
+	if timer < 0:
+		timer = 15.0
+		spawn_collectable.rpc()
 
-
-func _on_timer_timeout():
+@rpc("any_peer", "call_local")
+func spawn_collectable():
 	if count < maxC:
 		var rand_number = rng.randi() % 3 
 		if rand_number == 0:

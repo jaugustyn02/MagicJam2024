@@ -74,7 +74,7 @@ func _physics_process(delta):
 		elif gravity_counter2 > 0:
 			mul = 2
 		velocity.y += mul * gravity * delta * (time_multiplier ** 2)
-  else:
+	else:
 		double_jump_available = true
 	
 	gravity_counter1 -= delta
