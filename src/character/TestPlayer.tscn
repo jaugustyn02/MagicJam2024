@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bgrlwqk04wnx4"]
+[gd_scene load_steps=32 format=3 uid="uid://bgrlwqk04wnx4"]
 
 [ext_resource type="Script" path="res://src/character/TestPlayer.gd" id="1_g7qy8"]
 [ext_resource type="Texture2D" uid="uid://dgcm2h5od45yj" path="res://resources/Individual Sprites/adventurer-idle-00.png" id="2_axhvv"]
@@ -127,6 +127,7 @@ animations = [{
 [sub_resource type="Animation" id="Animation_7bq6i"]
 resource_name = "Attack"
 length = 0.45
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -151,6 +152,10 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4]
 }
+
+[sub_resource type="Animation" id="Animation_2ielm"]
+resource_name = "Attack2"
+length = 0.57
 
 [sub_resource type="Animation" id="Animation_17srq"]
 resource_name = "Fall"
@@ -250,6 +255,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [1]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Attack2"]
+}
 
 [sub_resource type="Animation" id="Animation_irror"]
 resource_name = "Run"
@@ -282,28 +299,13 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c7isx"]
 _data = {
 "Attack": SubResource("Animation_7bq6i"),
+"Attack2": SubResource("Animation_2ielm"),
 "Fall": SubResource("Animation_17srq"),
 "Idle": SubResource("Animation_ywdnh"),
 "Jump": SubResource("Animation_uojgv"),
 "RESET": SubResource("Animation_kjpvn"),
 "Run": SubResource("Animation_irror")
 }
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7241s"]
-animation = &"Idle"
-
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_bb2bc"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_7241s")
-blend_point_0/pos = Vector2(-1, 0)
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a5uol"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_kwd8a"]
-states/Idle/node = SubResource("AnimationNodeBlendSpace2D_bb2bc")
-states/Idle/position = Vector2(382, 119)
-states/Start/position = Vector2(192, 106)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_a5uol")]
 
 [node name="TestPlayer" type="CharacterBody2D"]
 script = ExtResource("1_g7qy8")
@@ -327,11 +329,3 @@ frame = 1
 libraries = {
 "": SubResource("AnimationLibrary_c7isx")
 }
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_c7isx")
-}
-tree_root = SubResource("AnimationNodeStateMachine_kwd8a")
-anim_player = NodePath("../AnimationPlayer")
-parameters/Idle/blend_position = Vector2(-0.904, 0.174603)
