@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://6njsu6t6ajot"]
+[gd_scene load_steps=15 format=3 uid="uid://6njsu6t6ajot"]
 
 [ext_resource type="Script" path="res://src/level/TestLevel.gd" id="1_7dhi7"]
 [ext_resource type="Texture2D" uid="uid://owy2ofsi86mi" path="res://resources/background_mountains2/floor_long.PNG" id="3_0vf8o"]
