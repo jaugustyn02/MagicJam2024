@@ -1,6 +1,202 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkiibh7dww7d8"]
+[gd_scene load_steps=16 format=3 uid="uid://bkiibh7dww7d8"]
 
 [ext_resource type="Script" path="res://src/level/Level.gd" id="1_scsgw"]
+[ext_resource type="Texture2D" uid="uid://owy2ofsi86mi" path="res://resources/background_mountains2/floor_long.PNG" id="2_wvjmb"]
+[ext_resource type="Texture2D" uid="uid://ca4tkwnof2d1e" path="res://resources/background_mountains2/background.PNG" id="3_ry5tt"]
+[ext_resource type="Texture2D" uid="uid://0uk2y4imqeo5" path="res://resources/background_mountains2/Furthest mountains.PNG" id="4_5dfb8"]
+[ext_resource type="Texture2D" uid="uid://cpu6abq138lmt" path="res://resources/background_mountains2/mountains2.PNG" id="5_llmkp"]
+[ext_resource type="Texture2D" uid="uid://eo7qm6iukqdd" path="res://resources/background_mountains2/Nearest mountains.PNG" id="6_fbvab"]
+[ext_resource type="Texture2D" uid="uid://c4qe0b5c20kbn" path="res://resources/background_mountains2/Foreground.PNG" id="7_hiqmj"]
+[ext_resource type="Texture2D" uid="uid://bmd1wv088ov3f" path="res://resources/background_mountains2/platform1.PNG" id="8_wlj4n"]
+[ext_resource type="Texture2D" uid="uid://dvvrwkbeegbx" path="res://resources/background_mountains2/grass.PNG" id="9_g78oa"]
+[ext_resource type="Script" path="res://src/level/Collectables.gd" id="9_rekti"]
+[ext_resource type="Texture2D" uid="uid://b3wkrha0fjukk" path="res://resources/background_mountains2/platform2.PNG" id="10_qrgcc"]
+[ext_resource type="Texture2D" uid="uid://bxox6f7xdm6o4" path="res://resources/background_mountains2/stone.PNG" id="11_v1y64"]
+[ext_resource type="Texture2D" uid="uid://j1oooduupcdf" path="res://resources/background_mountains2/spear.PNG" id="12_l00wk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0lyno"]
+size = Vector2(62.0001, 1083.99)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6twnr"]
+size = Vector2(62.0001, 1197)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_scsgw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Floor" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(577, 624.5)
+scale = Vector2(1.00348, 1)
+texture = ExtResource("2_wvjmb")
+
+[node name="BlockingWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1187, 80.996)
+shape = SubResource("RectangleShape2D_0lyno")
+
+[node name="BlockingWall2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-31, 75)
+shape = SubResource("RectangleShape2D_0lyno")
+
+[node name="CollisionFloor" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(586, 631)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_6twnr")
+
+[node name="Background" type="Sprite2D" parent="StaticBody2D"]
+z_index = -5
+texture_filter = 1
+position = Vector2(577.5, 305)
+scale = Vector2(2.50652, 2.592)
+texture = ExtResource("3_ry5tt")
+
+[node name="Background2" type="Sprite2D" parent="StaticBody2D"]
+z_index = -4
+texture_filter = 1
+position = Vector2(577, 304)
+scale = Vector2(2.5087, 2.6)
+texture = ExtResource("4_5dfb8")
+
+[node name="Background3" type="Sprite2D" parent="StaticBody2D"]
+z_index = -3
+texture_filter = 1
+position = Vector2(576.5, 306)
+scale = Vector2(2.51087, 2.584)
+texture = ExtResource("5_llmkp")
+
+[node name="Background4" type="Sprite2D" parent="StaticBody2D"]
+z_index = -2
+texture_filter = 1
+position = Vector2(572, 313)
+scale = Vector2(2.51304, 2.584)
+texture = ExtResource("6_fbvab")
+
+[node name="Foreground" type="Sprite2D" parent="StaticBody2D"]
+z_index = 3
+texture_filter = 1
+position = Vector2(576, 365)
+scale = Vector2(2.513, 3)
+texture = ExtResource("7_hiqmj")
+
+[node name="platforms right" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(889, 482)
+scale = Vector2(2.305, 2.305)
+texture = ExtResource("10_qrgcc")
+
+[node name="platforms right" type="Sprite2D" parent="StaticBody2D/platforms right"]
+position = Vector2(77.6573, -23.4273)
+scale = Vector2(1.02235, 1.02235)
+texture = ExtResource("10_qrgcc")
+
+[node name="grass" type="Sprite2D" parent="StaticBody2D/platforms right/platforms right"]
+position = Vector2(-0.424302, -2.97046)
+scale = Vector2(0.619159, 0.619159)
+texture = ExtResource("9_g78oa")
+
+[node name="stone" type="Sprite2D" parent="StaticBody2D/platforms right/platforms right"]
+z_index = -1
+position = Vector2(17.3986, -8.06271)
+scale = Vector2(0.55535, 0.55535)
+texture = ExtResource("11_v1y64")
+
+[node name="spear near stone" type="Sprite2D" parent="StaticBody2D/platforms right/platforms right/stone"]
+position = Vector2(-21.3955, 3.82061)
+scale = Vector2(0.619203, 0.619203)
+texture = ExtResource("12_l00wk")
+
+[node name="platforms right2" type="Sprite2D" parent="StaticBody2D/platforms right"]
+position = Vector2(5.16176e-05, -61.6052)
+scale = Vector2(0.999905, 1.12138)
+texture = ExtResource("10_qrgcc")
+
+[node name="grass" type="Sprite2D" parent="StaticBody2D/platforms right/platforms right2"]
+position = Vector2(7.43568e-06, -3.01048)
+scale = Vector2(0.602328, 0.69519)
+texture = ExtResource("9_g78oa")
+
+[node name="stone2" type="Sprite2D" parent="StaticBody2D/platforms right/platforms right2"]
+z_index = 1
+position = Vector2(-4.77269, -6.19003)
+rotation = -0.120428
+scale = Vector2(0.55535, 0.55535)
+skew = 0.150098
+texture = ExtResource("11_v1y64")
+
+[node name="platform lowest" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(483, 523)
+scale = Vector2(2.1, 2.1)
+texture = ExtResource("8_wlj4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/platform lowest"]
+position = Vector2(82.8571, -3.57628e-07)
+scale = Vector2(1.00119, 1.00119)
+texture = ExtResource("8_wlj4n")
+
+[node name="grass2" type="Sprite2D" parent="StaticBody2D/platform lowest/Sprite2D"]
+position = Vector2(0.951216, -2.85375)
+scale = Vector2(0.972711, 0.821066)
+texture = ExtResource("9_g78oa")
+
+[node name="grass" type="Sprite2D" parent="StaticBody2D/platform lowest/Sprite2D"]
+position = Vector2(-82.7585, -2.37812)
+scale = Vector2(0.998865, 0.917707)
+texture = ExtResource("9_g78oa")
+
+[node name="platform lowest" type="Sprite2D" parent="StaticBody2D/platform lowest"]
+position = Vector2(-4.59166, -108.571)
+scale = Vector2(1.09762, 1.09762)
+texture = ExtResource("8_wlj4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/platform lowest/platform lowest"]
+position = Vector2(82.8571, -3.57628e-07)
+scale = Vector2(1.00119, 1.00119)
+texture = ExtResource("8_wlj4n")
+
+[node name="grass2" type="Sprite2D" parent="StaticBody2D/platform lowest/platform lowest/Sprite2D"]
+position = Vector2(0.951216, -2.85375)
+scale = Vector2(0.972711, 0.821066)
+texture = ExtResource("9_g78oa")
+
+[node name="grass" type="Sprite2D" parent="StaticBody2D/platform lowest/platform lowest/Sprite2D"]
+position = Vector2(-82.7585, -2.37812)
+scale = Vector2(0.998865, 0.917707)
+texture = ExtResource("9_g78oa")
+
+[node name="platforms left" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(227, 461)
+scale = Vector2(1.9, 1.9)
+texture = ExtResource("8_wlj4n")
+
+[node name="platforms left" type="Sprite2D" parent="StaticBody2D/platforms left"]
+position = Vector2(-105.263, -32.6316)
+scale = Vector2(1.1079, 1.1079)
+texture = ExtResource("8_wlj4n")
+
+[node name="grass" type="Sprite2D" parent="StaticBody2D/platforms left/platforms left"]
+position = Vector2(-0.47506, -2.3753)
+scale = Vector2(0.998865, 0.917707)
+texture = ExtResource("9_g78oa")
+
+[node name="platforms left" type="Sprite2D" parent="StaticBody2D/platforms left/platforms left"]
+position = Vector2(113.488, -28.1091)
+scale = Vector2(1.02901, 1.02901)
+texture = ExtResource("8_wlj4n")
+
+[node name="SprawnLocations" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="SprawnLocations" groups=["PlayerSpawnPoint"]]
+position = Vector2(212, 526)
+
+[node name="1" type="Node2D" parent="SprawnLocations" groups=["PlayerSpawnPoint"]]
+position = Vector2(1015, 523)
+
+[node name="Collectables" type="Node" parent="."]
+script = ExtResource("9_rekti")
+
+[node name="Timer" type="Timer" parent="Collectables"]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Collectables/Timer" to="Collectables" method="_on_timer_timeout"]
