@@ -15,6 +15,10 @@ func _ready():
 			hostCharacterNode = currentPlayer
 		else:
 			guestCharacterNode = currentPlayer
+		
+		guestCharacterNode.opponent = hostCharacterNode
+		hostCharacterNode.opponent = guestCharacterNode
+		
 		currentPlayer.name = str(GameManager.Players[i].id)
 		
 		add_child(currentPlayer)

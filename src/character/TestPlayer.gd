@@ -2,9 +2,9 @@ extends CharacterBody2D
 
 
 const SPEED = 400.0
-const JUMP_VELOCITY = -575.0
+const JUMP_VELOCITY = -800
 const INITIAL_LIFETIME = 180.0
-
+var opponent
 var PlayerID: int
 
 @export var lifetime: float = INITIAL_LIFETIME
