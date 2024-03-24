@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cu1ijrvmsfkjt"]
+[gd_scene load_steps=3 format=3 uid="uid://cu1ijrvmsfkjt"]
 
 [ext_resource type="Script" path="res://src/collectibles/gravity_ball_red.gd" id="1_gb8yr"]
-[ext_resource type="Texture2D" uid="uid://b6b1vfs2k26nd" path="res://resources/collectibles/EnBallRed.png" id="1_rdcwy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l18xy"]
 
@@ -16,6 +15,5 @@ shape = SubResource("CircleShape2D_l18xy")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -1)
 scale = Vector2(0.539, 0.539)
-texture = ExtResource("1_rdcwy")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

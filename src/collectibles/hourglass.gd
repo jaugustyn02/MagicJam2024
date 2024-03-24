@@ -1,6 +1,6 @@
 extends Area2D
 
-const added_value: float = 5.0
+const added_value: float = 15.0
 	
 func _physics_process(delta):
 	get_node("AnimatedSprite2D").play("Animation")
