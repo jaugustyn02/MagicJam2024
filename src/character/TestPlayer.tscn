@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bgrlwqk04wnx4"]
+[gd_scene load_steps=25 format=3 uid="uid://bu7ew8oiv2of2"]
 
 [ext_resource type="Script" path="res://src/character/TestPlayer.gd" id="1_g7qy8"]
 [ext_resource type="Texture2D" uid="uid://dgcm2h5od45yj" path="res://resources/Individual Sprites/adventurer-idle-00.png" id="2_axhvv"]
