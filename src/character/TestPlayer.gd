@@ -103,3 +103,7 @@ func _physics_process(delta):
 	throw_press_duration += delta
 	throw_cooldown -= delta
 	move_and_slide()
+	
+func on_time_multiplier_changed(new_time_multiplier):
+	time_multiplier = new_time_multiplier
+	anim.speed_scale = time_multiplier
