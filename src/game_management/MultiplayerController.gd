@@ -17,7 +17,6 @@ func _ready():
 func _process(delta):
 	pass
 
-
 func peer_connected(id):
 	print("Player Connected", id)
 
@@ -30,7 +29,6 @@ func connected_to_server():
 	
 func connection_failed():
 	print("Couldn't Connect to Server")
-
 	
 @rpc("any_peer")
 func SendPlayerInformation(name, id):
@@ -44,10 +42,9 @@ func SendPlayerInformation(name, id):
 		for i in GameManager.Players:
 			SendPlayerInformation.rpc(GameManager.Players[i].name, i)
 			
-
 @rpc("any_peer", "call_local")
 func StartGame():
-	var scene = load("res://src/level/TestLevel.tscn").instantiate()
+	var scene = load("res://src/core/RootScene.tscn").instantiate()
 	get_tree().root.add_child(scene)
 	self.hide()
 
@@ -62,17 +59,13 @@ func _on_host_button_down():
 	multiplayer.set_multiplayer_peer(peer)
 	print("Waiting for Players")
 	SendPlayerInformation($LineEdit.text, multiplayer.get_unique_id())
-	pass # Replace with function body.
-
 
 func _on_join_button_down():
 	peer = ENetMultiplayerPeer.new()
 	peer.create_client(Address, Port)
 	peer.get_host().compress(ENetConnection.COMPRESS_ZLIB)
 	multiplayer.set_multiplayer_peer(peer)
-	pass # Replace with function body.
 
 
 func _on_start_game_button_down():
 	StartGame.rpc()
-	pass # Replace with function body.
