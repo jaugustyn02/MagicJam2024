@@ -48,6 +48,15 @@ func StartGame():
 	get_tree().root.add_child(scene)
 	self.hide()
 
+@rpc("any_peer", "call_local")
+func restart(player_id):
+	print("Dupa")
+	for n in get_children():
+		n.queue_free()
+	var scene = load("res://src/core/RootScene.tscn").instantiate()
+	get_tree().root.add_child(scene)
+	self.hide()
+
 func _on_host_button_down():
 	peer = ENetMultiplayerPeer.new()
 	var error = peer.create_server(Port, 2)

@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal end_game(player_id)
+
 @export var projectile :PackedScene
 
 const SPEED = 400.0
@@ -26,6 +28,8 @@ var is_attack_hitbox_active: bool = false
 var pixel_hack_stage: int = 0
 var locked_attack_direction: int = 0
 
+var dash_cooldown: float = 0.0
+var is_dead: bool = false
 var double_jump_available: bool = true
 
 @onready var anim = get_node("AnimationPlayer")
@@ -60,8 +64,18 @@ func _physics_process(delta):
 		$CursorPointer.visible = false
 		return
 		
+		
 	lifetime -= delta * time_multiplier
-	lifetime2 -= delta * time_multiplier
+	#if is_dead: 
+		#return
+		
+	if lifetime <= 0.0 and !is_dead:
+		end_game.emit(PlayerID)
+		is_dead = true
+		anim.play("Die")
+		set_physics_process(false)
+		return
+	
 	var direction = Input.get_axis("Left", "Right")
 		
 	if not is_on_floor():
@@ -81,14 +95,15 @@ func _physics_process(delta):
 			velocity.y = JUMP_VELOCITY * time_multiplier * 0.67
 		else:
 			velocity.y = JUMP_VELOCITY * time_multiplier
+			
 
-	if Input.is_action_just_pressed("Attack") and !is_attacking:
+	if Input.is_action_just_pressed("Attack") and !is_attacking and not Input.is_action_pressed("RangeAttack"):
 		change_direction(-1 if (get_local_mouse_position().x < 0) else 1)
 		is_attacking = true
 		anim.play("Attack")
 		
 	if Input.is_action_just_pressed("RangeAttack"):
-			throw_press_duration = 0.0
+		throw_press_duration = 0.0
 		
 	if throw_cooldown <= 0.0 and Input.is_action_just_released("RangeAttack"):
 		var throw_power = min(MAX_THROW_DURATION, throw_press_duration) + 1.0
@@ -153,6 +168,7 @@ func _on_player_hitbox_area_entered(area):
 	if area != $AttackHitbox:
 		if "playerNode2D" in area.get_parent():
 			if area.get_parent().playerNode2D != self:
-				lifetime -= SWORD_DAMAGE
+				lifetime -= SPEAR_DAMAGE
 		else:
 			lifetime -= SWORD_DAMAGE
+
