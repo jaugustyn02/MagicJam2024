@@ -2,7 +2,7 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://c2jm3pkwterxm"
+uid="uid://rd00cmv45jxc"
 path="res://.godot/imported/psycho_0_8.wav-2fb4daa3a1abf2187d67a6d7c607c7cd.sample"
 
 [deps]
@@ -18,7 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop_mode=2
+edit/loop_mode=0
 edit/loop_begin=0
 edit/loop_end=-1
 compress/mode=0

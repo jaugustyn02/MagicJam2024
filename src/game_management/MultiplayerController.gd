@@ -26,7 +26,7 @@ func peer_disconnected(id):
 	
 func connected_to_server():
 	print("Connected to Server")
-	SendPlayerInformation.rpc_id(1, $LineEdit.text, multiplayer.get_unique_id())
+	SendPlayerInformation.rpc_id(1, $IPInput.text, multiplayer.get_unique_id())
 	
 func connection_failed():
 	print("Couldn't Connect to Server")
@@ -68,14 +68,17 @@ func _on_host_button_down():
 	
 	multiplayer.set_multiplayer_peer(peer)
 	print("Waiting for Players")
-	SendPlayerInformation($LineEdit.text, multiplayer.get_unique_id())
+	SendPlayerInformation($IPInput.text, multiplayer.get_unique_id())
 
 func _on_join_button_down():
 	peer = ENetMultiplayerPeer.new()
-	peer.create_client(Address, Port)
+	peer.create_client($IPInput.text, Port)
 	peer.get_host().compress(ENetConnection.COMPRESS_ZLIB)
 	multiplayer.set_multiplayer_peer(peer)
 
 
 func _on_start_game_button_down():
 	StartGame.rpc()
+
+func _on_quit_game_button_down():
+	get_tree().quit()
