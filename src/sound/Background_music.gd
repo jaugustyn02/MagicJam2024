@@ -7,11 +7,11 @@ var timestampt = 0.0
 var previous_index = 3
 
 func _ready():
-	tempo_music_loads[1] = load("res://resources/soundtracks/psycho_0_8.wav")
-	tempo_music_loads[2] = load("res://resources/soundtracks/psycho_0_9.wav")
-	tempo_music_loads[3] = load("res://resources/soundtracks/psycho_1_0.wav")
-	tempo_music_loads[4] = load("res://resources/soundtracks/psycho_1_1.wav")
-	tempo_music_loads[5] = load("res://resources/soundtracks/psycho_1_2.wav")
+	tempo_music_loads[1] = load("res://resources/soundtracks/psycho_0_8.ogg")
+	tempo_music_loads[2] = load("res://resources/soundtracks/psycho_0_9.ogg")
+	tempo_music_loads[3] = load("res://resources/soundtracks/psycho_1_0.ogg")
+	tempo_music_loads[4] = load("res://resources/soundtracks/psycho_1_1.ogg")
+	tempo_music_loads[5] = load("res://resources/soundtracks/psycho_1_2.ogg")
 	stream = tempo_music_loads[3]
 	play()
 	

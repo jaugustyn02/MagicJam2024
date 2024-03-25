@@ -104,9 +104,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("Jump") and (is_on_floor() or double_jump_available):
 		if !is_on_floor():
 			double_jump_available = false
-			velocity.y = JUMP_VELOCITY * time_multiplier * 0.67
-		else:
-			velocity.y = JUMP_VELOCITY * time_multiplier
+		velocity.y = JUMP_VELOCITY * time_multiplier
 			
 
 	if Input.is_action_just_pressed("Attack") and !is_attacking and not Input.is_action_pressed("RangeAttack"):
