@@ -8,5 +8,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$TimeCounter.update_lifetime(characterNode.lifetime)
-	$TimeBar.update_lifetime(characterNode.lifetime)
+	if characterNode:
+		$TimeCounter.update_lifetime(characterNode.lifetime)
+		$TimeBar.update_lifetime(characterNode.lifetime)
