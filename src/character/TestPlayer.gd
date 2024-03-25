@@ -5,8 +5,8 @@ signal end_game(player_id)
 @export var projectile :PackedScene
 
 const SPEED = 400.0
-const SWORD_DAMAGE = 10.0
-const SPEAR_DAMAGE = 10.0
+const SWORD_DAMAGE = 3.0
+const SPEAR_DAMAGE = 5.0
 const JUMP_VELOCITY = -600
 const INITIAL_LIFETIME = 180.0
 

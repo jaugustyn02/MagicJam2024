@@ -10,7 +10,5 @@ func _ready():
 func _process(delta):
 	pass
 
-
-
 func _on_pressed():
-	get_parent().get_parent().restart.rpc()
+	get_tree().quit()
