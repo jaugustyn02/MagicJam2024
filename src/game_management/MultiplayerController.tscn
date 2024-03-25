@@ -53,6 +53,7 @@ theme_override_font_sizes/font_size = 31
 text = "Start Game"
 
 [node name="QuitGame" type="Button" parent="."]
+layout_mode = 0
 offset_left = 467.0
 offset_top = 993.0
 offset_right = 689.0
