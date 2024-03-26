@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://src/core/RootScene.gd" id="1_n7fwb"]
 [ext_resource type="PackedScene" uid="uid://duppseykdo0cy" path="res://src/game_management/TimeController.tscn" id="1_n223u"]
-[ext_resource type="PackedScene" uid="uid://cslpginlt0h0s" path="res://src/ui/end_screen.tscn" id="2_cqdib"]
+[ext_resource type="PackedScene" uid="uid://cslpginlt0h0s" path="res://src/ui/EndScreen.tscn" id="2_cqdib"]
 [ext_resource type="PackedScene" uid="uid://sv6gi2mgs0b7" path="res://src/game_management/LevelManager.tscn" id="4_4wkn0"]
 [ext_resource type="Script" path="res://src/core/PlayerHUD.gd" id="4_i2xps"]
 [ext_resource type="Script" path="res://src/core/TimeCounter.gd" id="4_s8cbv"]
 [ext_resource type="Script" path="res://src/core/TimeBar.gd" id="5_l6w0t"]
-[ext_resource type="PackedScene" uid="uid://bkivt3oilbpka" path="res://src/sound/background_music.tscn" id="7_27b7c"]
+[ext_resource type="PackedScene" uid="uid://bkivt3oilbpka" path="res://src/sound/BackgroundMusic.tscn" id="7_27b7c"]
 
 [sub_resource type="SystemFont" id="SystemFont_nnir8"]
 

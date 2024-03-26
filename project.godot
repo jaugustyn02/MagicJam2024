@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MagicJam2024"
-run/main_scene="res://src/intro/intro.tscn"
+run/main_scene="res://src/intro/Intro.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://resources/icon.svg"
 
@@ -21,9 +21,8 @@ GameManager="*res://src/game_management/GameManager.gd"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
-window/size/mode=2
+window/size/viewport_width=1280
+window/size/viewport_height=720
 
 [dotnet]
 

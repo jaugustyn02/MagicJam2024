@@ -10,7 +10,6 @@ var direction: Vector2
 var throw_power: float = 1.0
 var time_multiplier: float = 1.0
 var base_x_velocity: float
-
 var previous_velocity: Vector2
 
 func _ready():
@@ -37,16 +36,4 @@ func _physics_process(delta):
 
 func _on_area_2d_body_entered(body):
 	if body != playerNode2D:
-		print("Player hit")
 		destroy()
-	pass # Replace with function body.
-
-#func _on_area_2d_area_entered(area):
-	#if area != playerNode2D.get_node("Area2D"):
-		#destroy()
-	#pass # Replace with function body.
-#
-#func on_time_multiplier_changed(new_time_multiplier):
-	#print(new_time_multiplier)
-	#time_multiplier = new_time_multiplier
-	#velocity.x = new_time_multiplier * base_x_velocity

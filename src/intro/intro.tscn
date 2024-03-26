@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bkh2psm72s2mh"]
 
-[ext_resource type="Script" path="res://src/intro/intro.gd" id="1_cphgy"]
-[ext_resource type="Texture2D" uid="uid://bk4od8p4jjaoa" path="res://resources/ui/101TG.png" id="2_j5j8o"]
+[ext_resource type="Script" path="res://src/intro/Intro.gd" id="1_s50la"]
+[ext_resource type="Texture2D" uid="uid://bk4od8p4jjaoa" path="res://resources/ui/101TG.png" id="2_aauxl"]
 
 [sub_resource type="Animation" id="Animation_am5k1"]
 resource_name = "Fade_in"
@@ -58,12 +58,12 @@ _data = {
 }
 
 [node name="Intro" type="Node2D"]
-script = ExtResource("1_cphgy")
+script = ExtResource("1_s50la")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(955, 549)
 scale = Vector2(0.771429, 0.771429)
-texture = ExtResource("2_j5j8o")
+texture = ExtResource("2_aauxl")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -91.0
