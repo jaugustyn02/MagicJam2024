@@ -20,12 +20,12 @@ func end():
 	await get_tree().create_timer(2.0).timeout 
 	$EndScreen.visible = true
 	
-	
+
 @rpc("any_peer", "call_local")
 func restart():
-	get_parent().visible = false
+	#get_parent().visible = false
+	queue_free()
 	var scene = load("res://src/core/RootScene.tscn").instantiate()
 	get_tree().root.add_child(scene)
-	queue_free()
 
 

@@ -11,6 +11,5 @@ func _process(delta):
 	pass
 
 
-
 func _on_pressed():
 	get_parent().get_parent().restart.rpc()

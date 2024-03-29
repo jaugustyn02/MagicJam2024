@@ -28,7 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://2tt6y1qp2l4n" path="res://resources/Individual Sprites/adventurer-die-04.png" id="12_leyoj"]
 [ext_resource type="Texture2D" uid="uid://cot7ro4tbjurk" path="res://resources/Individual Sprites/adventurer-die-05.png" id="13_r54sd"]
 [ext_resource type="Texture2D" uid="uid://chjnog2xvn1pc" path="res://resources/Individual Sprites/adventurer-die-06.png" id="14_l107n"]
-[ext_resource type="PackedScene" uid="uid://b8ut22ynklnrj" path="res://src/player_control/cursor_pointer.tscn" id="22_ttdd4"]
+[ext_resource type="PackedScene" uid="uid://b8ut22ynklnrj" path="res://src/player_control/CursorPointer.tscn" id="22_ttdd4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0f4up"]
 radius = 21.0

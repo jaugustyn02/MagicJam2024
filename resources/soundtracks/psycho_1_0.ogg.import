@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/psycho_1_0.ogg-443c6eb414e819e59bd1c49e301c9c
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

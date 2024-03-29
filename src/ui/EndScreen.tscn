@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cslpginlt0h0s"]
 
-[ext_resource type="Script" path="res://src/ui/Button.gd" id="1_6o7ui"]
-[ext_resource type="Script" path="res://src/ui/Button2.gd" id="2_i4mt2"]
+[ext_resource type="Script" path="res://src/ui/RestartButton.gd" id="1_6o7ui"]
+[ext_resource type="Script" path="res://src/ui/QuitButton.gd" id="2_i4mt2"]
 
 [sub_resource type="SystemFont" id="SystemFont_awvu6"]
 subpixel_positioning = 0

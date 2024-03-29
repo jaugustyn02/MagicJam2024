@@ -1,6 +1,6 @@
 extends Node
 
-var Players={}
+var Players = {}
 
 
 # Called when the node enters the scene tree for the first time.
