@@ -51,6 +51,7 @@ size = Vector2(115, 22)
 size = Vector2(348, 18)
 
 [node name="Node2D" type="Node2D"]
+texture_filter = 1
 position = Vector2(1, 0)
 script = ExtResource("1_7dhi7")
 

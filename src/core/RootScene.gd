@@ -10,7 +10,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-	
+
 func end_game(player_id):
 	print(player_id)
 	end.rpc()
@@ -19,7 +19,7 @@ func end_game(player_id):
 func end():
 	await get_tree().create_timer(2.0).timeout 
 	$EndScreen.visible = true
-	
+
 
 @rpc("any_peer", "call_local")
 func restart():
@@ -27,5 +27,6 @@ func restart():
 	queue_free()
 	var scene = load("res://src/core/RootScene.tscn").instantiate()
 	get_tree().root.add_child(scene)
+	#get_tree().change_scene_to_file("res://src/core/RootScene.tscn")
 
 
