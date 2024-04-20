@@ -21,6 +21,7 @@ size = Vector2(62.0001, 1083.99)
 size = Vector2(62.0001, 1197)
 
 [node name="Level" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_scsgw")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
