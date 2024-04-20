@@ -41,27 +41,30 @@ theme_override_fonts/font = SubResource("SystemFont_sxm6n")
 theme_override_font_sizes/font_size = 70
 text = "Wins!"
 
-[node name="Button" type="Button" parent="."]
+[node name="Buttons" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 587.0
-offset_top = 314.0
-offset_right = 1295.0
-offset_bottom = 564.0
+offset_left = 716.0
+offset_top = 400.0
+offset_right = 1228.0
+offset_bottom = 848.0
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="PlayAgain" type="Button" parent="Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_fonts/font = SubResource("SystemFont_awvu6")
 theme_override_font_sizes/font_size = 70
-text = "Play Again?"
+text = "Play Again"
 script = ExtResource("1_6o7ui")
 
-[node name="Button2" type="Button" parent="."]
-layout_mode = 0
-offset_left = 587.0
-offset_top = 621.0
-offset_right = 1295.0
-offset_bottom = 871.0
+[node name="Quit" type="Button" parent="Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_fonts/font = SubResource("SystemFont_awvu6")
 theme_override_font_sizes/font_size = 70
 text = "Quit"
 script = ExtResource("2_i4mt2")
 
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
-[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/PlayAgain" to="Buttons/PlayAgain" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Quit" to="Buttons/Quit" method="_on_pressed"]

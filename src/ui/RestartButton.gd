@@ -11,4 +11,4 @@ func _process(delta):
 
 
 func _on_pressed():
-	get_parent().get_parent().restart.rpc()
+	get_parent().get_parent().get_parent().restart.rpc()
