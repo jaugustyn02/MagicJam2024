@@ -8,35 +8,35 @@
 [ext_resource type="Texture2D" uid="uid://c4qe0b5c20kbn" path="res://resources/background_mountains2/Foreground.PNG" id="6_5uglx"]
 [ext_resource type="Texture2D" uid="uid://drfwjevivwrca" path="res://resources/ui/GearsOfTime.png" id="8_8oieq"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_3nl55"]
+[sub_resource type="CurveTexture" id="CurveTexture_pmh32"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v45ds"]
-texture = SubResource("CanvasTexture_3nl55")
-modulate_color = Color(0.172549, 0.152941, 0.113725, 1)
+texture = SubResource("CurveTexture_pmh32")
+modulate_color = Color(0.172549, 0.152941, 0.113725, 0.627451)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_rehoe"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3bdgm"]
 texture = SubResource("CanvasTexture_rehoe")
-modulate_color = Color(0.623529, 0.176471, 0.160784, 1)
+modulate_color = Color(0.537255, 0.176471, 0.160784, 0.627451)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_7rost"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3mggm"]
 texture = SubResource("CanvasTexture_7rost")
-modulate_color = Color(0.623529, 0.176471, 0.160784, 1)
+modulate_color = Color(0.537255, 0.176471, 0.160784, 0.627451)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ytca0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ibdun"]
 texture = SubResource("CanvasTexture_ytca0")
-modulate_color = Color(0.623529, 0.176471, 0.160784, 1)
+modulate_color = Color(0.537255, 0.176471, 0.160784, 0.627451)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_o868u"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7e47h"]
 texture = SubResource("CanvasTexture_o868u")
-modulate_color = Color(0.623529, 0.176471, 0.160784, 1)
+modulate_color = Color(0.537255, 0.176471, 0.160784, 0.627451)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -132,11 +132,24 @@ offset_right = 764.0
 offset_bottom = 992.0
 theme_override_constants/v_separation = 22
 
-[node name="StartGame" type="Button" parent="ButtonsContainer"]
+[node name="NameInput" type="LineEdit" parent="ButtonsContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../QuitGame")
+focus_neighbor_bottom = NodePath("../StartGame")
+focus_next = NodePath("../StartGame")
+focus_previous = NodePath("../QuitGame")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_v45ds")
+placeholder_text = "Enter Name"
+alignment = 1
+
+[node name="StartGame" type="Button" parent="ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../NameInput")
 focus_neighbor_bottom = NodePath("../Host")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxTexture_v45ds")

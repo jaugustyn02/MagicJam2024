@@ -14,12 +14,13 @@ func _ready():
 		var currentPlayer = CharacterScene.instantiate()
 		currentPlayer.name = str(GameManager.Players[i].id)
 		add_child(currentPlayer)
+		
 		if GameManager.Players[i].id == 1:
 			hostCharacterNode = currentPlayer
 		else:
 			guestCharacterNode = currentPlayer
 		
-		currentPlayer.name = str(GameManager.Players[i].id)
+		#currentPlayer.name = str(GameManager.Players[i].id)
 		currentPlayer.end_game.connect(get_parent().end_game)
 		
 		for spawn in $Level.get_tree().get_nodes_in_group("PlayerSpawnPoint"):

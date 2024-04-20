@@ -5,6 +5,8 @@ extends Control
 @export var Port = 2137
 
 var peer
+var defaultServerName = "Player1"
+var defaultGuestName = "Player2"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,17 +20,20 @@ func _process(delta):
 
 func peer_connected(id):
 	print("Player Connected: ", id)
-	$ConsoleOutput.text = "Player Connected: " + str(id)
+	if multiplayer.is_server():
+		$ConsoleOutput.text = "Second Player Connected"
 
 func peer_disconnected(id):
 	print("Player Disconnected: ", id)
-	$ConsoleOutput.text = "Player Disconnected: " + str(id)
-	
+	$ConsoleOutput.text = "Second Player Disconnected"
+
 func connected_to_server():
 	print("Connected to Server")
 	$ConsoleOutput.text = "Connected to Server"
-	SendPlayerInformation.rpc_id(1, $ButtonsContainer/IPInput.text, multiplayer.get_unique_id())
-	
+	var playerName = $ButtonsContainer/NameInput.text
+	playerName = playerName if playerName else defaultGuestName
+	SendPlayerInformation.rpc_id(1, playerName, multiplayer.get_unique_id())
+
 func connection_failed():
 	print("Couldn't Connect to Server")
 	$ConsoleOutput.text = "Couldn't Connect to Server"
@@ -41,26 +46,23 @@ func SendPlayerInformation(name, id):
 			"name": name,
 			"id": id
 		}
-		
+	
 	if multiplayer.is_server():
+		print("Player Connected with name: " + name)
 		for i in GameManager.Players:
 			SendPlayerInformation.rpc(GameManager.Players[i].name, i)
 
 @rpc("any_peer", "call_local")
 func StartGame():
-	var scene = load("res://src/core/RootScene.tscn").instantiate()
-	get_tree().root.add_child(scene)
-	#self.hide()
-	queue_free()
-
-#@rpc("any_peer", "call_local")
-#func restart(player_id):
-	#print("Dupa")
-	#for n in get_children():
-		#n.queue_free()
+	if multiplayer.get_peers().size() == 1:
 	#var scene = load("res://src/core/RootScene.tscn").instantiate()
+		get_tree().change_scene_to_file("res://src/core/RootScene.tscn")
+	else:
+		print("Cannot start without second player!")
+		$ConsoleOutput.text = "Cannot Start without Second Player!"
 	#get_tree().root.add_child(scene)
 	#self.hide()
+	#queue_free()
 
 
 func _on_host_button_down():
@@ -72,9 +74,12 @@ func _on_host_button_down():
 	peer.get_host().compress(ENetConnection.COMPRESS_ZLIB)
 	
 	multiplayer.set_multiplayer_peer(peer)
-	print("Waiting for second player...")
-	$ConsoleOutput.text = "Waiting for second player..."
-	SendPlayerInformation($ButtonsContainer/IPInput.text, multiplayer.get_unique_id())
+	print("Waiting for second player")
+	$ConsoleOutput.text = "Waiting for second player"
+	
+	var playerName = $ButtonsContainer/NameInput.text
+	playerName = playerName if playerName else defaultServerName
+	SendPlayerInformation(playerName, multiplayer.get_unique_id())
 
 func _on_join_button_down():
 	peer = ENetMultiplayerPeer.new()
